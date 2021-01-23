@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Palett.Convert, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Palett.Convert.0.0.4\lib\netstandard2.0\Palett.Convert.dll</HintPath>
+    </Reference>
+    <Reference Include="Palett.Utils, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Palett.Utils.0.0.4\lib\netstandard2.0\Palett.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,6 +73,7 @@
     <EmbeddedResource Include="WinFormAngrand.resx">
       <DependentUpon>WinFormAngrand.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +95,10 @@
     <ProjectReference Include="..\Angrand.UserControls.ColorSpacePanel\Angrand.UserControls.ColorSpacePanel.csproj">
       <Project>{02302cfe-8dcc-42ee-b203-c1dbaf1f9ab5}</Project>
       <Name>Angrand.UserControls.ColorSpacePanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Angrand.UserControls.PalettControl\Angrand.UserControls.PalettControl.csproj">
+      <Project>{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}</Project>
+      <Name>Angrand.UserControls.PalettControl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

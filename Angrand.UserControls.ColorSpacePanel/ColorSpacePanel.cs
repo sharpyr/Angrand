@@ -15,16 +15,11 @@ namespace Angrand.UserControls.ColorControlPanel
             set
             {
                 this.RgbCollectionEnabled = false;
-                Debug.Print(
-                    $"set rgb {value} (hsl: {(value.GetHue(), value.GetSaturation() * 100, value.GetBrightness() * 100)})");
+                Debug.Print($"set rgb {value} (hsl: {value.ColorToHsl()})");
                 this.comboBoxR.SelectedIndex = value.R;
                 this.comboBoxG.SelectedIndex = value.G;
                 this.comboBoxB.SelectedIndex = value.B;
-                if (this.HslCollectionEnabled)
-                {
-                    this.Hsl = (value.GetHue(), value.GetSaturation() * 100, value.GetBrightness() * 100);
-                }
-
+                if (this.HslCollectionEnabled) this.Hsl = value.ColorToHsl();
                 OnIndexChanged?.Invoke(this.Rgb, (this.RgbCollectionEnabled, this.HslCollectionEnabled));
                 this.RgbCollectionEnabled = true;
             }
@@ -41,12 +36,7 @@ namespace Angrand.UserControls.ColorControlPanel
                 this.comboBoxH.SelectedIndex = (int) h;
                 this.comboBoxS.SelectedIndex = (int) s;
                 this.comboBoxL.SelectedIndex = (int) l;
-                if (this.RgbCollectionEnabled)
-                {
-                    var (r, g, b) = value.HslToRgb();
-                    this.Rgb = Color.FromArgb(r, g, b);
-                }
-
+                if (this.RgbCollectionEnabled) this.Rgb = value.HslToColor();
                 OnIndexChanged?.Invoke(this.Rgb, (this.RgbCollectionEnabled, this.HslCollectionEnabled));
                 this.HslCollectionEnabled = true;
             }
@@ -56,6 +46,20 @@ namespace Angrand.UserControls.ColorControlPanel
 
         public bool RgbCollectionEnabled = true;
         public bool HslCollectionEnabled = true;
+
+        public void UpdateHslCollection((float, float, float) hsl)
+        {
+            this.RgbCollectionEnabled = false;
+            this.Hsl = hsl;
+            this.RgbCollectionEnabled = true;
+        }
+
+        public void UpdateRgbCollection(Color color)
+        {
+            this.HslCollectionEnabled = false;
+            this.Rgb = color;
+            this.HslCollectionEnabled = true;
+        }
 
         public ColorSpacePanel()
         {
@@ -73,20 +77,14 @@ namespace Angrand.UserControls.ColorControlPanel
         private void RgbSelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.RgbCollectionEnabled) return;
-            this.RgbCollectionEnabled = false;
-            var color = this.Rgb;
-            this.Hsl = (color.GetHue(), color.GetSaturation() * 100, color.GetBrightness() * 100);
-            this.RgbCollectionEnabled = true;
+            this.UpdateHslCollection(this.Rgb.ColorToHsl());
             OnIndexChanged?.Invoke(this.Rgb, (this.RgbCollectionEnabled, this.HslCollectionEnabled));
         }
 
         private void HslSelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.HslCollectionEnabled) return;
-            this.HslCollectionEnabled = false;
-            var (r, g, b) = this.Hsl.HslToRgb();
-            this.Rgb = Color.FromArgb(r, g, b);
-            this.HslCollectionEnabled = true;
+            this.UpdateRgbCollection(this.Hsl.HslToColor());
             OnIndexChanged?.Invoke(this.Rgb, (this.RgbCollectionEnabled, this.HslCollectionEnabled));
         }
     }

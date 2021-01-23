@@ -10,7 +10,7 @@ namespace Angrand.PalettApp
         public WinFormAngrand()
         {
             InitializeComponent();
-            this._colorCardCollection.ColorHandler += OnColorCardCollectionClick;
+            this._colorCardCollection.OnClicked += OnColorCardCollectionClick;
             this._colorSpacePanel.OnIndexChanged += OnColorSpacePanelIndexedChanged;
         }
 
@@ -30,6 +30,11 @@ namespace Angrand.PalettApp
 
         private void WinFormAngrand_Load(object sender, EventArgs e)
         {
+        }
+
+        private void _colorCardCollection_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

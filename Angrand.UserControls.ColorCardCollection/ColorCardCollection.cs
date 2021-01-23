@@ -13,11 +13,11 @@ namespace Angrand.UserControls.ColorCardCollection
             InitializeComponent();
         }
 
-        public event Action<Color> ColorHandler;
+        public event Action<Color> OnClicked;
 
         private void button_color_Click(object sender, EventArgs e)
         {
-            ColorHandler?.Invoke(this.CardColor = ((Button) sender).BackColor);
+            OnClicked?.Invoke(this.CardColor = ((Button) sender).BackColor);
         }
     }
 }

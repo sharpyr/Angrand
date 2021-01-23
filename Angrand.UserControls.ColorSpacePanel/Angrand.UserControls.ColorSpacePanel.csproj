@@ -30,14 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Generic.Math, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Generic.Math.1.0.2\lib\net46\Generic.Math.dll</HintPath>
+    <Reference Include="Palett.Convert, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Palett.Convert.0.0.4\lib\netstandard2.0\Palett.Convert.dll</HintPath>
     </Reference>
-    <Reference Include="Palett.Convert, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Palett.Convert.0.0.2\lib\netstandard2.0\Palett.Convert.dll</HintPath>
-    </Reference>
-    <Reference Include="Palett.Utils, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Palett.Utils.0.0.2\lib\netstandard2.0\Palett.Utils.dll</HintPath>
+    <Reference Include="Palett.Utils, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Palett.Utils.0.0.4\lib\netstandard2.0\Palett.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -32,9 +32,10 @@ namespace Angrand.PalettApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormAngrand));
             this.labelColorCardCollection = new System.Windows.Forms.Label();
             this.labelColorControlPanel = new System.Windows.Forms.Label();
-            this._colorCardCollection = new Angrand.UserControls.ColorCardCollection.ColorCardCollection();
-            this._colorSpacePanel = new Angrand.UserControls.ColorControlPanel.ColorSpacePanel();
             this.labelAux = new System.Windows.Forms.Label();
+            this._colorSpacePanel = new Angrand.UserControls.ColorControlPanel.ColorSpacePanel();
+            this._colorCardCollection = new Angrand.UserControls.ColorCardCollection.ColorCardCollection();
+            this.palettControl1 = new Angrand.UserControls.PalettControl.PalettControl();
             this.SuspendLayout();
             // 
             // labelColorCardCollection
@@ -55,27 +56,6 @@ namespace Angrand.PalettApp
             this.labelColorControlPanel.TabIndex = 5;
             this.labelColorControlPanel.Text = "Waiting for information ...";
             // 
-            // _colorCardCollection
-            // 
-            this._colorCardCollection.CardColor = System.Drawing.Color.Empty;
-            this._colorCardCollection.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this._colorCardCollection.Location = new System.Drawing.Point(105, 237);
-            this._colorCardCollection.Margin = new System.Windows.Forms.Padding(0);
-            this._colorCardCollection.Name = "_colorCardCollection";
-            this._colorCardCollection.Size = new System.Drawing.Size(100, 300);
-            this._colorCardCollection.TabIndex = 3;
-            // 
-            // _colorSpacePanel
-            // 
-            this._colorSpacePanel.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(149)))), ((int)(((byte)(237)))));
-            this._colorSpacePanel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._colorSpacePanel.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("_colorSpacePanel.Hsl")));
-            this._colorSpacePanel.Location = new System.Drawing.Point(105, 48);
-            this._colorSpacePanel.Margin = new System.Windows.Forms.Padding(0);
-            this._colorSpacePanel.Name = "_colorSpacePanel";
-            this._colorSpacePanel.Size = new System.Drawing.Size(100, 160);
-            this._colorSpacePanel.TabIndex = 6;
-            // 
             // labelAux
             // 
             this.labelAux.AutoSize = true;
@@ -85,11 +65,43 @@ namespace Angrand.PalettApp
             this.labelAux.TabIndex = 7;
             this.labelAux.Text = "Waiting for information ...";
             // 
+            // _colorSpacePanel
+            // 
+            this._colorSpacePanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._colorSpacePanel.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("_colorSpacePanel.Hsl")));
+            this._colorSpacePanel.Location = new System.Drawing.Point(105, 48);
+            this._colorSpacePanel.Margin = new System.Windows.Forms.Padding(0);
+            this._colorSpacePanel.Name = "_colorSpacePanel";
+            this._colorSpacePanel.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(150)))), ((int)(((byte)(236)))));
+            this._colorSpacePanel.Size = new System.Drawing.Size(100, 160);
+            this._colorSpacePanel.TabIndex = 6;
+            // 
+            // _colorCardCollection
+            // 
+            this._colorCardCollection.CardColor = System.Drawing.Color.Empty;
+            this._colorCardCollection.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this._colorCardCollection.Location = new System.Drawing.Point(105, 237);
+            this._colorCardCollection.Margin = new System.Windows.Forms.Padding(0);
+            this._colorCardCollection.Name = "_colorCardCollection";
+            this._colorCardCollection.Size = new System.Drawing.Size(100, 300);
+            this._colorCardCollection.TabIndex = 3;
+            this._colorCardCollection.Load += new System.EventHandler(this._colorCardCollection_Load);
+            // 
+            // palettControl1
+            // 
+            this.palettControl1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.palettControl1.Location = new System.Drawing.Point(300, 29);
+            this.palettControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.palettControl1.Name = "palettControl1";
+            this.palettControl1.Size = new System.Drawing.Size(300, 400);
+            this.palettControl1.TabIndex = 8;
+            // 
             // WinFormAngrand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 637);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.palettControl1);
             this.Controls.Add(this.labelAux);
             this.Controls.Add(this._colorSpacePanel);
             this.Controls.Add(this.labelColorControlPanel);
@@ -111,6 +123,7 @@ namespace Angrand.PalettApp
         private System.Windows.Forms.Label labelColorControlPanel;
         private UserControls.ColorControlPanel.ColorSpacePanel _colorSpacePanel;
         private System.Windows.Forms.Label labelAux;
+        private UserControls.PalettControl.PalettControl palettControl1;
     }
 }
 
