@@ -33,12 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Palett.Convert, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Palett.Convert.0.0.4\lib\netstandard2.0\Palett.Convert.dll</HintPath>
-    </Reference>
-    <Reference Include="Palett.Utils, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Palett.Utils.0.0.4\lib\netstandard2.0\Palett.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,7 +67,6 @@
     <EmbeddedResource Include="WinFormAngrand.resx">
       <DependentUpon>WinFormAngrand.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +93,11 @@
       <Project>{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}</Project>
       <Name>Angrand.UserControls.PalettControl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Palett.Convert">
+      <Version>0.0.4</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
