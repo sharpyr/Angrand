@@ -7,7 +7,7 @@
     <ProjectGuid>{42788952-5CD7-4D91-A137-DD80994208DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Angrand.PalettApp</RootNamespace>
-    <AssemblyName>Angrand.PalettApp</AssemblyName>
+    <AssemblyName>Angrand.WinForm.Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

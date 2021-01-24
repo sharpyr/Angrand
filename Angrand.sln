@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.PalettApp", "Angrand.PalettApp\Angrand.PalettApp.csproj", "{42788952-5CD7-4D91-A137-DD80994208DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.WinForm.Test", "Angrand.WinForm.Test\Angrand.WinForm.Test.csproj", "{42788952-5CD7-4D91-A137-DD80994208DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.UserControls.ColorCardCollection", "Angrand.UserControls.ColorCardCollection\Angrand.UserControls.ColorCardCollection.csproj", "{F4524AC3-4B23-4196-937E-AA7A03A635B4}"
 EndProject

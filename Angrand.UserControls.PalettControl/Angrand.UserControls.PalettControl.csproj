@@ -1,77 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Angrand.UserControls.PalettControl</RootNamespace>
-    <AssemblyName>Angrand.UserControls.PalettControl</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RegisterForComInterop>true</RegisterForComInterop>
+    <TargetFramework>net472</TargetFramework>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Title>Angrand.UserControls.PalettControl</Title>
+    <Description>Dye and DyeFactory</Description>
+    <Authors>Hoyeung Wong</Authors>
+    <Company>Hoyeung Wong</Company>
+    <Copyright>Hoyeung Wong (c) 2020-present</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <FileVersion>0.0.1</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PalettControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PalettControl.Designer.cs">
-      <DependentUpon>PalettControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PalettControlExt.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PalettControl.resx">
-      <DependentUpon>PalettControl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Angrand.UserControls.ColorCardCollection\Angrand.UserControls.ColorCardCollection.csproj">
-      <Project>{F4524AC3-4B23-4196-937E-AA7A03A635B4}</Project>
-      <Name>Angrand.UserControls.ColorCardCollection</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Angrand.UserControls.ColorSpacePanel\Angrand.UserControls.ColorSpacePanel.csproj">
-      <Project>{02302CFE-8DCC-42EE-B203-C1DBAF1F9AB5}</Project>
-      <Name>Angrand.UserControls.ColorSpacePanel</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Angrand.UserControls.ColorCardCollection\Angrand.UserControls.ColorCardCollection.csproj"/>
+    <ProjectReference Include="..\Angrand.UserControls.ColorSpacePanel\Angrand.UserControls.ColorSpacePanel.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
       <Version>0.0.4</Version>
     </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
