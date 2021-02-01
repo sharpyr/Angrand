@@ -81,22 +81,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Angrand.UserControls.ColorCardCollection\Angrand.UserControls.ColorCardCollection.csproj">
-      <Project>{F4524AC3-4B23-4196-937E-AA7A03A635B4}</Project>
-      <Name>Angrand.UserControls.ColorCardCollection</Name>
+    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj">
+      <Project>{f4524ac3-4b23-4196-937e-aa7a03a635b4}</Project>
+      <Name>Angrand.GUI.CardCollection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Angrand.UserControls.ColorSpacePanel\Angrand.UserControls.ColorSpacePanel.csproj">
+    <ProjectReference Include="..\Angrand.GUI.ColorSpacePanel\Angrand.GUI.ColorSpacePanel.csproj">
       <Project>{02302cfe-8dcc-42ee-b203-c1dbaf1f9ab5}</Project>
-      <Name>Angrand.UserControls.ColorSpacePanel</Name>
+      <Name>Angrand.GUI.ColorSpacePanel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Angrand.UserControls.PalettControl\Angrand.UserControls.PalettControl.csproj">
-      <Project>{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}</Project>
-      <Name>Angrand.UserControls.PalettControl</Name>
+    <ProjectReference Include="..\Angrand.GUI.PalettControl\Angrand.GUI.PalettControl.csproj">
+      <Project>{c3f9bbdd-5ecc-41ed-a7da-c9c47ff7b942}</Project>
+      <Name>Angrand.GUI.PalettControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Angrand.GUI.PresetQueue\Angrand.GUI.PresetQueue.csproj">
+      <Project>{278321C2-B369-490F-8187-1A39CD81F439}</Project>
+      <Name>Angrand.GUI.PresetQueue</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
-      <Version>0.0.4</Version>
+      <Version>0.1.2</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

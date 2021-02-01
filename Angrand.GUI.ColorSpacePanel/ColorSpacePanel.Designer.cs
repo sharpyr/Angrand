@@ -1,4 +1,4 @@
-﻿namespace Angrand.UserControls.ColorControlPanel
+﻿namespace Angrand.GUI.ColorSpacePanel
 {
     partial class ColorSpacePanel
     {
@@ -66,11 +66,13 @@
             // 
             this.comboBoxL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxL.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxL.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxL.FormattingEnabled = true;
             this.comboBoxL.Location = new System.Drawing.Point(1, 131);
             this.comboBoxL.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxL.Name = "comboBoxL";
-            this.comboBoxL.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxL.Size = new System.Drawing.Size(98, 25);
             this.comboBoxL.TabIndex = 5;
             this.comboBoxL.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
@@ -78,11 +80,13 @@
             // 
             this.comboBoxS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxS.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxS.FormattingEnabled = true;
             this.comboBoxS.Location = new System.Drawing.Point(1, 105);
             this.comboBoxS.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxS.Name = "comboBoxS";
-            this.comboBoxS.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxS.Size = new System.Drawing.Size(98, 25);
             this.comboBoxS.TabIndex = 4;
             this.comboBoxS.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
@@ -90,11 +94,13 @@
             // 
             this.comboBoxB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxB.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxB.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxB.FormattingEnabled = true;
             this.comboBoxB.Location = new System.Drawing.Point(1, 53);
             this.comboBoxB.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxB.Name = "comboBoxB";
-            this.comboBoxB.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxB.Size = new System.Drawing.Size(98, 25);
             this.comboBoxB.TabIndex = 2;
             this.comboBoxB.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -102,11 +108,13 @@
             // 
             this.comboBoxG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxG.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxG.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxG.FormattingEnabled = true;
             this.comboBoxG.Location = new System.Drawing.Point(1, 27);
             this.comboBoxG.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxG.Name = "comboBoxG";
-            this.comboBoxG.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxG.Size = new System.Drawing.Size(98, 25);
             this.comboBoxG.TabIndex = 1;
             this.comboBoxG.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -114,11 +122,13 @@
             // 
             this.comboBoxR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxR.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxR.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxR.FormattingEnabled = true;
             this.comboBoxR.Location = new System.Drawing.Point(1, 1);
             this.comboBoxR.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxR.Name = "comboBoxR";
-            this.comboBoxR.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxR.Size = new System.Drawing.Size(98, 25);
             this.comboBoxR.TabIndex = 0;
             this.comboBoxR.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -126,21 +136,23 @@
             // 
             this.comboBoxH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxH.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxH.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxH.FormattingEnabled = true;
             this.comboBoxH.Location = new System.Drawing.Point(1, 79);
             this.comboBoxH.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxH.Name = "comboBoxH";
-            this.comboBoxH.Size = new System.Drawing.Size(98, 23);
+            this.comboBoxH.Size = new System.Drawing.Size(98, 25);
             this.comboBoxH.TabIndex = 3;
             this.comboBoxH.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
             // ColorSpacePanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanelColorControlPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(60, 160);
             this.Name = "ColorSpacePanel";
             this.Size = new System.Drawing.Size(100, 160);
             this.tableLayoutPanelColorControlPanel.ResumeLayout(false);

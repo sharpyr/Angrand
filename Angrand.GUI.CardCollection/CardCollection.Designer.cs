@@ -1,6 +1,6 @@
-﻿namespace Angrand.UserControls.ColorCardCollection
+﻿namespace Angrand.GUI.CardCollection
 {
-    partial class ColorCardCollection
+    partial class CardCollection
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -101,7 +101,7 @@
             this.tableLayoutPanelColorCardCollection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelColorCardCollection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelColorCardCollection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanelColorCardCollection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
+            this.tableLayoutPanelColorCardCollection.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelColorCardCollection.Size = new System.Drawing.Size(100, 300);
             this.tableLayoutPanelColorCardCollection.TabIndex = 0;
             // 
@@ -385,14 +385,13 @@
             this.buttonColor01.UseVisualStyleBackColor = false;
             this.buttonColor01.Click += new System.EventHandler(this.button_color_Click);
             // 
-            // ColorCardCollection
+            // CardCollection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanelColorCardCollection);
             this.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "ColorCardCollection";
+            this.Name = "CardCollection";
             this.Size = new System.Drawing.Size(100, 300);
             this.tableLayoutPanelColorCardCollection.ResumeLayout(false);
             this.ResumeLayout(false);

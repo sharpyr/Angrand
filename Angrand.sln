@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.WinForm.Test", "Angrand.WinForm.Test\Angrand.WinForm.Test.csproj", "{42788952-5CD7-4D91-A137-DD80994208DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.UserControls.ColorCardCollection", "Angrand.UserControls.ColorCardCollection\Angrand.UserControls.ColorCardCollection.csproj", "{F4524AC3-4B23-4196-937E-AA7A03A635B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angrand.GUI.CardCollection", "Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj", "{F4524AC3-4B23-4196-937E-AA7A03A635B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.UserControls.ColorSpacePanel", "Angrand.UserControls.ColorSpacePanel\Angrand.UserControls.ColorSpacePanel.csproj", "{02302CFE-8DCC-42EE-B203-C1DBAF1F9AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angrand.GUI.ColorSpacePanel", "Angrand.GUI.ColorSpacePanel\Angrand.GUI.ColorSpacePanel.csproj", "{02302CFE-8DCC-42EE-B203-C1DBAF1F9AB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.UserControls.PalettControl", "Angrand.UserControls.PalettControl\Angrand.UserControls.PalettControl.csproj", "{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angrand.GUI.PalettControl", "Angrand.GUI.PalettControl\Angrand.GUI.PalettControl.csproj", "{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angrand.GUI.PresetQueue", "Angrand.GUI.PresetQueue\Angrand.GUI.PresetQueue.csproj", "{278321C2-B369-490F-8187-1A39CD81F439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3F9BBDD-5ECC-41ED-A7DA-C9C47FF7B942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278321C2-B369-490F-8187-1A39CD81F439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278321C2-B369-490F-8187-1A39CD81F439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278321C2-B369-490F-8187-1A39CD81F439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278321C2-B369-490F-8187-1A39CD81F439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
