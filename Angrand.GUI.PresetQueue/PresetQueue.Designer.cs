@@ -21,13 +21,11 @@
         }
 
         #region 组件设计器生成的代码
-
         /// <summary>
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.tableLayoutPanelPresetQueue = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRP5 = new System.Windows.Forms.Button();
             this.buttonLP5 = new System.Windows.Forms.Button();
@@ -96,7 +94,6 @@
             // buttonRP5
             // 
             this.buttonRP5.AllowDrop = true;
-            this.buttonRP5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP5.FlatAppearance.BorderSize = 0;
@@ -114,7 +111,6 @@
             // buttonLP5
             // 
             this.buttonLP5.AllowDrop = true;
-            this.buttonLP5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP5.FlatAppearance.BorderSize = 0;
@@ -132,7 +128,6 @@
             // buttonRP4
             // 
             this.buttonRP4.AllowDrop = true;
-            this.buttonRP4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP4.FlatAppearance.BorderSize = 0;
@@ -150,7 +145,6 @@
             // buttonLP4
             // 
             this.buttonLP4.AllowDrop = true;
-            this.buttonLP4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP4.FlatAppearance.BorderSize = 0;
@@ -168,7 +162,6 @@
             // buttonRP3
             // 
             this.buttonRP3.AllowDrop = true;
-            this.buttonRP3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP3.FlatAppearance.BorderSize = 0;
@@ -186,7 +179,6 @@
             // buttonLP3
             // 
             this.buttonLP3.AllowDrop = true;
-            this.buttonLP3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP3.FlatAppearance.BorderSize = 0;
@@ -204,7 +196,6 @@
             // buttonRP2
             // 
             this.buttonRP2.AllowDrop = true;
-            this.buttonRP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP2.FlatAppearance.BorderSize = 0;
@@ -222,7 +213,6 @@
             // buttonLP2
             // 
             this.buttonLP2.AllowDrop = true;
-            this.buttonLP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP2.FlatAppearance.BorderSize = 0;
@@ -240,7 +230,6 @@
             // buttonRP1
             // 
             this.buttonRP1.AllowDrop = true;
-            this.buttonRP1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP1.FlatAppearance.BorderSize = 0;
@@ -258,7 +247,6 @@
             // buttonLP1
             // 
             this.buttonLP1.AllowDrop = true;
-            this.buttonLP1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP1.FlatAppearance.BorderSize = 0;
