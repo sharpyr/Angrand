@@ -44,7 +44,7 @@ namespace Angrand.GUI.PalettControl {
       var hsl = this.colorSpacePanelLeft.Hsl.UpdateLightness(this.vScrollBarLeft.Value);
       this.colorSpacePanelLeft.Hsl = hsl;
       this.colorSpacePanelLeft.OnIndexChanged += OnColorSpacePanelLeftIndexChanged;
-      this.buttonBlockRight.LocalUpdate((int) hsl.l, this.colorSpacePanelLeft.Rgb);
+      this.buttonBlockLeft.LocalUpdate((int) hsl.l, this.colorSpacePanelLeft.Rgb);
     }
     private void vScrollBarRight_Scroll(object sender, ScrollEventArgs e) {
       this.colorSpacePanelRight.OnIndexChanged -= OnColorSpacePanelRightIndexChanged;

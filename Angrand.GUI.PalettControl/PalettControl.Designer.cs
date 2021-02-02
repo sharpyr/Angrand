@@ -139,13 +139,10 @@
             // colorSpacePanelLeft
             // 
             this.colorSpacePanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSpacePanelLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.colorSpacePanelLeft.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("colorSpacePanelLeft.Hsl")));
             this.colorSpacePanelLeft.Location = new System.Drawing.Point(36, 0);
             this.colorSpacePanelLeft.Margin = new System.Windows.Forms.Padding(0);
             this.colorSpacePanelLeft.MinimumSize = new System.Drawing.Size(0, 120);
             this.colorSpacePanelLeft.Name = "colorSpacePanelLeft";
-            this.colorSpacePanelLeft.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(149)))), ((int)(((byte)(237)))));
             this.colorSpacePanelLeft.Size = new System.Drawing.Size(84, 145);
             this.colorSpacePanelLeft.TabIndex = 1;
             // 
@@ -153,7 +150,6 @@
             // 
             this.cardCollectionLeft.CardColor = System.Drawing.Color.Empty;
             this.cardCollectionLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardCollectionLeft.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.cardCollectionLeft.Location = new System.Drawing.Point(36, 145);
             this.cardCollectionLeft.Margin = new System.Windows.Forms.Padding(0);
             this.cardCollectionLeft.Name = "cardCollectionLeft";
@@ -163,13 +159,10 @@
             // colorSpacePanelRight
             // 
             this.colorSpacePanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSpacePanelRight.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.colorSpacePanelRight.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("colorSpacePanelRight.Hsl")));
             this.colorSpacePanelRight.Location = new System.Drawing.Point(120, 0);
             this.colorSpacePanelRight.Margin = new System.Windows.Forms.Padding(0);
             this.colorSpacePanelRight.MinimumSize = new System.Drawing.Size(0, 120);
             this.colorSpacePanelRight.Name = "colorSpacePanelRight";
-            this.colorSpacePanelRight.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(149)))), ((int)(((byte)(237)))));
             this.colorSpacePanelRight.Size = new System.Drawing.Size(84, 145);
             this.colorSpacePanelRight.TabIndex = 2;
             // 
@@ -177,7 +170,6 @@
             // 
             this.cardCollectionRight.CardColor = System.Drawing.Color.Empty;
             this.cardCollectionRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardCollectionRight.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.cardCollectionRight.Location = new System.Drawing.Point(120, 145);
             this.cardCollectionRight.Margin = new System.Windows.Forms.Padding(0);
             this.cardCollectionRight.Name = "cardCollectionRight";

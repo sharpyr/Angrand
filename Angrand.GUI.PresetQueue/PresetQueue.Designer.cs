@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresetQueue));
             this.tableLayoutPanelPresetQueue = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRP5 = new System.Windows.Forms.Button();
             this.buttonLP5 = new System.Windows.Forms.Button();
@@ -97,191 +96,181 @@
             // buttonRP5
             // 
             this.buttonRP5.AllowDrop = true;
-            this.buttonRP5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRP5.BackgroundImage")));
             this.buttonRP5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP5.FlatAppearance.BorderSize = 0;
             this.buttonRP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRP5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRP5.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonRP5.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonRP5.Location = new System.Drawing.Point(204, 96);
             this.buttonRP5.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRP5.Name = "buttonRP5";
             this.buttonRP5.Size = new System.Drawing.Size(36, 24);
             this.buttonRP5.TabIndex = 19;
+            this.buttonRP5.Text = "<";
             this.buttonRP5.UseVisualStyleBackColor = true;
             this.buttonRP5.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonLP5
             // 
             this.buttonLP5.AllowDrop = true;
-            this.buttonLP5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLP5.BackgroundImage")));
             this.buttonLP5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP5.FlatAppearance.BorderSize = 0;
             this.buttonLP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLP5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLP5.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonLP5.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonLP5.Location = new System.Drawing.Point(0, 96);
             this.buttonLP5.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLP5.Name = "buttonLP5";
             this.buttonLP5.Size = new System.Drawing.Size(36, 24);
             this.buttonLP5.TabIndex = 18;
+            this.buttonLP5.Text = ">";
             this.buttonLP5.UseVisualStyleBackColor = true;
             this.buttonLP5.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonRP4
             // 
             this.buttonRP4.AllowDrop = true;
-            this.buttonRP4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRP4.BackgroundImage")));
             this.buttonRP4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP4.FlatAppearance.BorderSize = 0;
             this.buttonRP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRP4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRP4.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonRP4.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonRP4.Location = new System.Drawing.Point(204, 72);
             this.buttonRP4.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRP4.Name = "buttonRP4";
             this.buttonRP4.Size = new System.Drawing.Size(36, 24);
             this.buttonRP4.TabIndex = 17;
+            this.buttonRP4.Text = "<";
             this.buttonRP4.UseVisualStyleBackColor = true;
             this.buttonRP4.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonLP4
             // 
             this.buttonLP4.AllowDrop = true;
-            this.buttonLP4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLP4.BackgroundImage")));
             this.buttonLP4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP4.FlatAppearance.BorderSize = 0;
             this.buttonLP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLP4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLP4.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonLP4.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonLP4.Location = new System.Drawing.Point(0, 72);
             this.buttonLP4.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLP4.Name = "buttonLP4";
             this.buttonLP4.Size = new System.Drawing.Size(36, 24);
             this.buttonLP4.TabIndex = 16;
+            this.buttonLP4.Text = ">";
             this.buttonLP4.UseVisualStyleBackColor = true;
             this.buttonLP4.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonRP3
             // 
             this.buttonRP3.AllowDrop = true;
-            this.buttonRP3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRP3.BackgroundImage")));
             this.buttonRP3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP3.FlatAppearance.BorderSize = 0;
             this.buttonRP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRP3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRP3.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonRP3.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonRP3.Location = new System.Drawing.Point(204, 48);
             this.buttonRP3.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRP3.Name = "buttonRP3";
             this.buttonRP3.Size = new System.Drawing.Size(36, 24);
             this.buttonRP3.TabIndex = 15;
+            this.buttonRP3.Text = "<";
             this.buttonRP3.UseVisualStyleBackColor = true;
             this.buttonRP3.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonLP3
             // 
             this.buttonLP3.AllowDrop = true;
-            this.buttonLP3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLP3.BackgroundImage")));
             this.buttonLP3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP3.FlatAppearance.BorderSize = 0;
             this.buttonLP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLP3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLP3.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonLP3.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonLP3.Location = new System.Drawing.Point(0, 48);
             this.buttonLP3.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLP3.Name = "buttonLP3";
             this.buttonLP3.Size = new System.Drawing.Size(36, 24);
             this.buttonLP3.TabIndex = 14;
+            this.buttonLP3.Text = ">";
             this.buttonLP3.UseVisualStyleBackColor = true;
             this.buttonLP3.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonRP2
             // 
             this.buttonRP2.AllowDrop = true;
-            this.buttonRP2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRP2.BackgroundImage")));
             this.buttonRP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP2.FlatAppearance.BorderSize = 0;
             this.buttonRP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRP2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRP2.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonRP2.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonRP2.Location = new System.Drawing.Point(204, 24);
             this.buttonRP2.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRP2.Name = "buttonRP2";
             this.buttonRP2.Size = new System.Drawing.Size(36, 24);
             this.buttonRP2.TabIndex = 13;
+            this.buttonRP2.Text = "<";
             this.buttonRP2.UseVisualStyleBackColor = true;
             this.buttonRP2.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonLP2
             // 
             this.buttonLP2.AllowDrop = true;
-            this.buttonLP2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLP2.BackgroundImage")));
             this.buttonLP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP2.FlatAppearance.BorderSize = 0;
             this.buttonLP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLP2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLP2.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonLP2.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonLP2.Location = new System.Drawing.Point(0, 24);
             this.buttonLP2.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLP2.Name = "buttonLP2";
             this.buttonLP2.Size = new System.Drawing.Size(36, 24);
             this.buttonLP2.TabIndex = 12;
+            this.buttonLP2.Text = ">";
             this.buttonLP2.UseVisualStyleBackColor = true;
             this.buttonLP2.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonRP1
             // 
             this.buttonRP1.AllowDrop = true;
-            this.buttonRP1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRP1.BackgroundImage")));
             this.buttonRP1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRP1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRP1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRP1.FlatAppearance.BorderSize = 0;
             this.buttonRP1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRP1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRP1.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonRP1.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonRP1.Location = new System.Drawing.Point(204, 0);
             this.buttonRP1.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRP1.Name = "buttonRP1";
             this.buttonRP1.Size = new System.Drawing.Size(36, 24);
             this.buttonRP1.TabIndex = 11;
+            this.buttonRP1.Text = "<";
             this.buttonRP1.UseVisualStyleBackColor = true;
             this.buttonRP1.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
             // buttonLP1
             // 
             this.buttonLP1.AllowDrop = true;
-            this.buttonLP1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLP1.BackgroundImage")));
             this.buttonLP1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLP1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLP1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLP1.FlatAppearance.BorderSize = 0;
             this.buttonLP1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLP1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLP1.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonLP1.ForeColor = System.Drawing.Color.DarkGray;
             this.buttonLP1.Location = new System.Drawing.Point(0, 0);
             this.buttonLP1.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLP1.Name = "buttonLP1";
             this.buttonLP1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.buttonLP1.Size = new System.Drawing.Size(36, 24);
             this.buttonLP1.TabIndex = 10;
+            this.buttonLP1.Text = ">";
             this.buttonLP1.UseVisualStyleBackColor = true;
             this.buttonLP1.Click += new System.EventHandler(this.OnButtonChevron_Click);
             // 
@@ -429,7 +418,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanelPresetQueue);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PresetQueue";
             this.Size = new System.Drawing.Size(240, 122);
