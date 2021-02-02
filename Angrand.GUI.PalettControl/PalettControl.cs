@@ -4,20 +4,22 @@ using System.Windows.Forms;
 
 namespace Angrand.GUI.PalettControl {
   public partial class PalettControl : UserControl {
-    public (Color, Color) Preset {
-      get => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb);
-      set => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb) = value;
-    }
-
     public PalettControl() {
       InitializeComponent();
       this.cardCollectionLeft.OnClicked += OnCardCollectionLeftClicked;
       this.cardCollectionRight.OnClicked += OnCardCollectionRightClicked;
       this.colorSpacePanelLeft.OnIndexChanged += OnColorSpacePanelLeftIndexChanged;
       this.colorSpacePanelRight.OnIndexChanged += OnColorSpacePanelRightIndexChanged;
+      // this.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
 
-    private void PalettControl_Load(object sender, EventArgs e) {
+    public (Color, Color) Preset
+    {
+      get => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb);
+      set => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb) = value;
+    }
+
+        private void PalettControl_Load(object sender, EventArgs e) {
       // this.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
 

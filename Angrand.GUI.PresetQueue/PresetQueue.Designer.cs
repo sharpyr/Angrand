@@ -265,6 +265,7 @@
             // buttonRight1
             // 
             this.buttonRight1.AllowDrop = true;
+            this.buttonRight1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonRight1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRight1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRight1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -273,12 +274,13 @@
             this.buttonRight1.Name = "buttonRight1";
             this.buttonRight1.Size = new System.Drawing.Size(84, 24);
             this.buttonRight1.TabIndex = 1;
-            this.buttonRight1.UseVisualStyleBackColor = true;
+            this.buttonRight1.UseVisualStyleBackColor = false;
             this.buttonRight1.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonRight2
             // 
             this.buttonRight2.AllowDrop = true;
+            this.buttonRight2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonRight2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRight2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRight2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -287,12 +289,13 @@
             this.buttonRight2.Name = "buttonRight2";
             this.buttonRight2.Size = new System.Drawing.Size(84, 24);
             this.buttonRight2.TabIndex = 3;
-            this.buttonRight2.UseVisualStyleBackColor = true;
+            this.buttonRight2.UseVisualStyleBackColor = false;
             this.buttonRight2.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonRight3
             // 
             this.buttonRight3.AllowDrop = true;
+            this.buttonRight3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonRight3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRight3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRight3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -301,12 +304,13 @@
             this.buttonRight3.Name = "buttonRight3";
             this.buttonRight3.Size = new System.Drawing.Size(84, 24);
             this.buttonRight3.TabIndex = 5;
-            this.buttonRight3.UseVisualStyleBackColor = true;
+            this.buttonRight3.UseVisualStyleBackColor = false;
             this.buttonRight3.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonRight4
             // 
             this.buttonRight4.AllowDrop = true;
+            this.buttonRight4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonRight4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRight4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRight4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -315,12 +319,13 @@
             this.buttonRight4.Name = "buttonRight4";
             this.buttonRight4.Size = new System.Drawing.Size(84, 24);
             this.buttonRight4.TabIndex = 7;
-            this.buttonRight4.UseVisualStyleBackColor = true;
+            this.buttonRight4.UseVisualStyleBackColor = false;
             this.buttonRight4.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonRight5
             // 
             this.buttonRight5.AllowDrop = true;
+            this.buttonRight5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonRight5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRight5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonRight5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -329,12 +334,13 @@
             this.buttonRight5.Name = "buttonRight5";
             this.buttonRight5.Size = new System.Drawing.Size(84, 24);
             this.buttonRight5.TabIndex = 9;
-            this.buttonRight5.UseVisualStyleBackColor = true;
+            this.buttonRight5.UseVisualStyleBackColor = false;
             this.buttonRight5.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonLeft1
             // 
             this.buttonLeft1.AllowDrop = true;
+            this.buttonLeft1.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLeft1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLeft1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLeft1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -343,12 +349,13 @@
             this.buttonLeft1.Name = "buttonLeft1";
             this.buttonLeft1.Size = new System.Drawing.Size(84, 24);
             this.buttonLeft1.TabIndex = 0;
-            this.buttonLeft1.UseVisualStyleBackColor = true;
+            this.buttonLeft1.UseVisualStyleBackColor = false;
             this.buttonLeft1.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonLeft2
             // 
             this.buttonLeft2.AllowDrop = true;
+            this.buttonLeft2.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLeft2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLeft2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLeft2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -357,12 +364,13 @@
             this.buttonLeft2.Name = "buttonLeft2";
             this.buttonLeft2.Size = new System.Drawing.Size(84, 24);
             this.buttonLeft2.TabIndex = 2;
-            this.buttonLeft2.UseVisualStyleBackColor = true;
+            this.buttonLeft2.UseVisualStyleBackColor = false;
             this.buttonLeft2.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonLeft3
             // 
             this.buttonLeft3.AllowDrop = true;
+            this.buttonLeft3.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLeft3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLeft3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLeft3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -371,12 +379,13 @@
             this.buttonLeft3.Name = "buttonLeft3";
             this.buttonLeft3.Size = new System.Drawing.Size(84, 24);
             this.buttonLeft3.TabIndex = 4;
-            this.buttonLeft3.UseVisualStyleBackColor = true;
+            this.buttonLeft3.UseVisualStyleBackColor = false;
             this.buttonLeft3.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonLeft4
             // 
             this.buttonLeft4.AllowDrop = true;
+            this.buttonLeft4.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLeft4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLeft4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLeft4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -385,12 +394,13 @@
             this.buttonLeft4.Name = "buttonLeft4";
             this.buttonLeft4.Size = new System.Drawing.Size(84, 24);
             this.buttonLeft4.TabIndex = 6;
-            this.buttonLeft4.UseVisualStyleBackColor = true;
+            this.buttonLeft4.UseVisualStyleBackColor = false;
             this.buttonLeft4.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // buttonLeft5
             // 
             this.buttonLeft5.AllowDrop = true;
+            this.buttonLeft5.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLeft5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonLeft5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLeft5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -399,7 +409,7 @@
             this.buttonLeft5.Name = "buttonLeft5";
             this.buttonLeft5.Size = new System.Drawing.Size(84, 24);
             this.buttonLeft5.TabIndex = 8;
-            this.buttonLeft5.UseVisualStyleBackColor = true;
+            this.buttonLeft5.UseVisualStyleBackColor = false;
             this.buttonLeft5.Click += new System.EventHandler(this.OnButtonPreset_Click);
             // 
             // PresetQueue

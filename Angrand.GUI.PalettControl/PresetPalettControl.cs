@@ -16,7 +16,8 @@ namespace Angrand.GUI.PalettControl {
       InitializeComponent();
       presetQueue.OnPresetClicked += this.PresetQueuePresetClicked;
       presetQueue.OnChevronClicked += this.PresetQueueChevronClicked;
-      // palettControl.OnDoneClicked += this.OnDoneClicked;
+      // this.Preset = Utils.DefaultPreset;
+      // this.PresetCollection = Utils.PresetCollection;
     }
     public event Action OnDoneClicked {
       add => palettControl.OnDoneClicked += value;
@@ -24,6 +25,9 @@ namespace Angrand.GUI.PalettControl {
     }
 
     private void palettControl_Load(object sender, EventArgs e) { }
+    private void presetQueue_Load(object sender, EventArgs e) {
+      // presetQueue.Presets = Utils.PresetCollection;
+    }
     private void PresetQueuePresetClicked((Color min, Color max) preset) => palettControl.Preset = preset;
     private void PresetQueueChevronClicked(int index) => presetQueue.SetColor(index, this.palettControl.Preset);
   }

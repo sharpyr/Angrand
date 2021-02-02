@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Src\ColorExt.cs" />
+    <Compile Include="Src\Utils.cs" />
     <Compile Include="WinFormAngrand.cs">
       <SubType>Form</SubType>
     </Compile>

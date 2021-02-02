@@ -5,16 +5,16 @@ using Veho.Vector;
 
 namespace Angrand.GUI.PresetQueue {
   public partial class PresetQueue : UserControl {
-    public int Count => this.tableLayoutPanelPresetQueue.RowCount;
+    public PresetQueue() {
+      InitializeComponent();
+      // this.Presets = Utils.PresetCollection;
+    }
+    public int Count => this.tableLayoutPanelPresetQueue.RowCount - 1;
     public (Color min, Color max)[] Presets {
       get => Inits.Init(this.Count, this.GetColor);
       set => value.Iterate(this.SetColor);
     }
-    public PresetQueue() {
-      InitializeComponent();
-      // if (presets == null) { presets = PresetCollection.Presets(); }
-      this.Presets = PresetCollection.Presets();
-    }
+
     public event Action<(Color min, Color max)> OnPresetClicked;
     public event Action<int> OnChevronClicked;
     public (Button left, Button right) this[int index] {

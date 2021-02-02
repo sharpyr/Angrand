@@ -32,8 +32,8 @@
             this.tableLayoutPanelPresetPalettControl = new System.Windows.Forms.TableLayoutPanel();
             this.labelPalett = new System.Windows.Forms.Label();
             this.labelPresets = new System.Windows.Forms.Label();
-            this.palettControl = new Angrand.GUI.PalettControl.PalettControl();
             this.presetQueue = new Angrand.GUI.PresetQueue.PresetQueue();
+            this.palettControl = new Angrand.GUI.PalettControl.PalettControl();
             this.tableLayoutPanelPresetPalettControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,11 +42,10 @@
             this.tableLayoutPanelPresetPalettControl.ColumnCount = 1;
             this.tableLayoutPanelPresetPalettControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPresetPalettControl.Controls.Add(this.labelPalett, 0, 0);
-            this.tableLayoutPanelPresetPalettControl.Controls.Add(this.palettControl, 0, 1);
             this.tableLayoutPanelPresetPalettControl.Controls.Add(this.labelPresets, 0, 2);
             this.tableLayoutPanelPresetPalettControl.Controls.Add(this.presetQueue, 0, 3);
+            this.tableLayoutPanelPresetPalettControl.Controls.Add(this.palettControl, 0, 1);
             this.tableLayoutPanelPresetPalettControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelPresetPalettControl.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tableLayoutPanelPresetPalettControl.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelPresetPalettControl.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelPresetPalettControl.Name = "tableLayoutPanelPresetPalettControl";
@@ -64,10 +63,11 @@
             this.labelPalett.AutoSize = true;
             this.labelPalett.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPalett.ForeColor = System.Drawing.Color.Gray;
-            this.labelPalett.Location = new System.Drawing.Point(3, 3);
-            this.labelPalett.Margin = new System.Windows.Forms.Padding(3);
+            this.labelPalett.Location = new System.Drawing.Point(0, 0);
+            this.labelPalett.Margin = new System.Windows.Forms.Padding(0);
             this.labelPalett.Name = "labelPalett";
-            this.labelPalett.Size = new System.Drawing.Size(234, 19);
+            this.labelPalett.Padding = new System.Windows.Forms.Padding(4);
+            this.labelPalett.Size = new System.Drawing.Size(240, 23);
             this.labelPalett.TabIndex = 2;
             this.labelPalett.Text = "Color cards";
             // 
@@ -76,38 +76,52 @@
             this.labelPresets.AutoSize = true;
             this.labelPresets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPresets.ForeColor = System.Drawing.Color.Gray;
-            this.labelPresets.Location = new System.Drawing.Point(3, 538);
-            this.labelPresets.Margin = new System.Windows.Forms.Padding(3);
+            this.labelPresets.Location = new System.Drawing.Point(0, 536);
+            this.labelPresets.Margin = new System.Windows.Forms.Padding(0);
             this.labelPresets.Name = "labelPresets";
-            this.labelPresets.Size = new System.Drawing.Size(234, 19);
+            this.labelPresets.Padding = new System.Windows.Forms.Padding(4);
+            this.labelPresets.Size = new System.Drawing.Size(240, 23);
             this.labelPresets.TabIndex = 3;
             this.labelPresets.Text = "Preset Collection";
-            // 
-            // palettControl
-            // 
-            this.palettControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.palettControl.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.palettControl.Location = new System.Drawing.Point(0, 25);
-            this.palettControl.Margin = new System.Windows.Forms.Padding(0);
-            this.palettControl.Name = "palettControl";
-            this.palettControl.Size = new System.Drawing.Size(240, 510);
-            this.palettControl.TabIndex = 0;
-            this.palettControl.Load += new System.EventHandler(this.palettControl_Load);
             // 
             // presetQueue
             // 
             this.presetQueue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.presetQueue.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presetQueue.Location = new System.Drawing.Point(0, 560);
+            this.presetQueue.Location = new System.Drawing.Point(0, 559);
             this.presetQueue.Margin = new System.Windows.Forms.Padding(0);
             this.presetQueue.Name = "presetQueue";
+            this.presetQueue.Presets = new System.ValueTuple<System.Drawing.Color, System.Drawing.Color>[] {
+        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets"))),
+        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets1"))),
+        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets2"))),
+        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets3"))),
+        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets4")))};
             this.presetQueue.Size = new System.Drawing.Size(240, 90);
             this.presetQueue.TabIndex = 4;
+            this.presetQueue.Load += new System.EventHandler(this.presetQueue_Load);
+            // 
+            // palettControl
+            // 
+            this.palettControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.palettControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.palettControl.ForeColor = System.Drawing.Color.DarkGray;
+            this.palettControl.Location = new System.Drawing.Point(0, 23);
+            this.palettControl.Margin = new System.Windows.Forms.Padding(0);
+            this.palettControl.Name = "palettControl";
+            this.palettControl.Preset = ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("palettControl.Preset")));
+            this.palettControl.Size = new System.Drawing.Size(240, 513);
+            this.palettControl.TabIndex = 5;
+            this.palettControl.Load += new System.EventHandler(this.palettControl_Load);
             // 
             // PresetPalettControl
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.tableLayoutPanelPresetPalettControl);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkGray;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PresetPalettControl";
             this.Size = new System.Drawing.Size(240, 650);
@@ -121,8 +135,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPresetPalettControl;
         private System.Windows.Forms.Label labelPalett;
-        private PalettControl palettControl;
         private System.Windows.Forms.Label labelPresets;
         private PresetQueue.PresetQueue presetQueue;
+        private PalettControl palettControl;
     }
 }

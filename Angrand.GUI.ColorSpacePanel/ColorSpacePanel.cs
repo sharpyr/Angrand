@@ -60,7 +60,7 @@ namespace Angrand.GUI.ColorSpacePanel {
       this.comboBoxH.Items.AddRange(indexes = Inits.Init(361, x => (object) x));
       this.comboBoxS.Items.AddRange(indexes = Inits.Init(101, x => (object) x));
       this.comboBoxL.Items.AddRange(indexes);
-      this.Rgb = Color.CornflowerBlue;
+      this.Rgb = Color.Gainsboro;
     }
 
     private void RgbSelectedIndexChanged(object sender, EventArgs e) {
