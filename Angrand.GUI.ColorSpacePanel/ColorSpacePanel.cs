@@ -54,7 +54,7 @@ namespace Angrand.GUI.ColorSpacePanel {
     public ColorSpacePanel() {
       InitializeComponent();
       object[] indexes;
-      this.comboBoxR.Items.AddRange(indexes = Inits.Init(256, x => (object) x)); 
+      this.comboBoxR.Items.AddRange(indexes = Inits.Init(256, x => (object) x));
       this.comboBoxG.Items.AddRange(indexes); // indexes = Enumerable.Range(0, 256).Select(x => (object) x).ToArray();
       this.comboBoxB.Items.AddRange(indexes);
       this.comboBoxH.Items.AddRange(indexes = Inits.Init(361, x => (object) x));
