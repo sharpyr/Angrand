@@ -91,12 +91,6 @@
             this.presetQueue.Location = new System.Drawing.Point(0, 559);
             this.presetQueue.Margin = new System.Windows.Forms.Padding(0);
             this.presetQueue.Name = "presetQueue";
-            this.presetQueue.Presets = new System.ValueTuple<System.Drawing.Color, System.Drawing.Color>[] {
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets1"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets2"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets3"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetQueue.Presets4")))};
             this.presetQueue.Size = new System.Drawing.Size(240, 90);
             this.presetQueue.TabIndex = 4;
             this.presetQueue.Load += new System.EventHandler(this.presetQueue_Load);
@@ -109,7 +103,6 @@
             this.palettControl.Location = new System.Drawing.Point(0, 23);
             this.palettControl.Margin = new System.Windows.Forms.Padding(0);
             this.palettControl.Name = "palettControl";
-            this.palettControl.Preset = ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("palettControl.Preset")));
             this.palettControl.Size = new System.Drawing.Size(240, 513);
             this.palettControl.TabIndex = 5;
             this.palettControl.Load += new System.EventHandler(this.palettControl_Load);

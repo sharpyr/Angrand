@@ -38,6 +38,7 @@ namespace Angrand.PalettApp
             // 
             // presetPalettControl1
             // 
+            this.presetPalettControl1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.presetPalettControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.presetPalettControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presetPalettControl1.ForeColor = System.Drawing.Color.DarkGray;

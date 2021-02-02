@@ -4,6 +4,13 @@ using System.Windows.Forms;
 
 namespace Angrand.GUI.PalettControl {
   public partial class PresetPalettControl : UserControl {
+    public PresetPalettControl() {
+      InitializeComponent();
+      presetQueue.OnPresetClicked += this.PresetQueuePresetClicked;
+      presetQueue.OnChevronClicked += this.PresetQueueChevronClicked;
+      // this.Preset = Utils.DefaultPreset;
+      // this.PresetCollection = Utils.PresetCollection;
+    }
     public (Color min, Color max) Preset {
       get => palettControl.Preset;
       set => palettControl.Preset = value;
@@ -11,13 +18,6 @@ namespace Angrand.GUI.PalettControl {
     public (Color min, Color max)[] PresetCollection {
       get => presetQueue.Presets;
       set => presetQueue.Presets = value;
-    }
-    public PresetPalettControl() {
-      InitializeComponent();
-      presetQueue.OnPresetClicked += this.PresetQueuePresetClicked;
-      presetQueue.OnChevronClicked += this.PresetQueueChevronClicked;
-      // this.Preset = Utils.DefaultPreset;
-      // this.PresetCollection = Utils.PresetCollection;
     }
     public event Action OnDoneClicked {
       add => palettControl.OnDoneClicked += value;
