@@ -102,6 +102,9 @@
     <PackageReference Include="Palett.Convert">
       <Version>0.1.2</Version>
     </PackageReference>
+    <PackageReference Include="Spare.Logger">
+      <Version>0.1.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

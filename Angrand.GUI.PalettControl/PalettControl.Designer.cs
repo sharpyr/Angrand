@@ -32,13 +32,13 @@
             this.tableLayoutPanelPalettControl = new System.Windows.Forms.TableLayoutPanel();
             this.vScrollBarRight = new System.Windows.Forms.VScrollBar();
             this.buttonBlockRight = new System.Windows.Forms.Button();
-            this.colorSpacePanelLeft = new GUI.ColorSpacePanel.ColorSpacePanel();
-            this.cardCollectionLeft = new GUI.CardCollection.CardCollection();
-            this.colorSpacePanelRight = new GUI.ColorSpacePanel.ColorSpacePanel();
-            this.cardCollectionRight = new GUI.CardCollection.CardCollection();
             this.buttonBlockLeft = new System.Windows.Forms.Button();
             this.vScrollBarLeft = new System.Windows.Forms.VScrollBar();
             this.buttonDone = new System.Windows.Forms.Button();
+            this.colorSpacePanelLeft = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
+            this.cardCollectionLeft = new Angrand.GUI.CardCollection.CardCollection();
+            this.colorSpacePanelRight = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
+            this.cardCollectionRight = new Angrand.GUI.CardCollection.CardCollection();
             this.tableLayoutPanelPalettControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             this.tableLayoutPanelPalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelPalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelPalettControl.Size = new System.Drawing.Size(240, 490);
+            this.tableLayoutPanelPalettControl.Size = new System.Drawing.Size(240, 474);
             this.tableLayoutPanelPalettControl.TabIndex = 0;
             // 
             // vScrollBarRight
@@ -75,8 +75,8 @@
             this.vScrollBarRight.Location = new System.Drawing.Point(204, 145);
             this.vScrollBarRight.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.vScrollBarRight.Name = "vScrollBarRight";
-            this.vScrollBarRight.Size = new System.Drawing.Size(36, 312);
-            this.vScrollBarRight.TabIndex = 7;
+            this.vScrollBarRight.Size = new System.Drawing.Size(36, 296);
+            this.vScrollBarRight.TabIndex = 8;
             this.vScrollBarRight.Value = 50;
             this.vScrollBarRight.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBarRight_Scroll);
             // 
@@ -91,8 +91,50 @@
             this.buttonBlockRight.Margin = new System.Windows.Forms.Padding(0);
             this.buttonBlockRight.Name = "buttonBlockRight";
             this.buttonBlockRight.Size = new System.Drawing.Size(36, 145);
-            this.buttonBlockRight.TabIndex = 5;
+            this.buttonBlockRight.TabIndex = 6;
             this.buttonBlockRight.UseVisualStyleBackColor = true;
+            // 
+            // buttonBlockLeft
+            // 
+            this.buttonBlockLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonBlockLeft.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonBlockLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBlockLeft.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBlockLeft.ForeColor = System.Drawing.Color.Gray;
+            this.buttonBlockLeft.Location = new System.Drawing.Point(0, 0);
+            this.buttonBlockLeft.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonBlockLeft.Name = "buttonBlockLeft";
+            this.buttonBlockLeft.Size = new System.Drawing.Size(36, 145);
+            this.buttonBlockLeft.TabIndex = 5;
+            this.buttonBlockLeft.UseVisualStyleBackColor = true;
+            // 
+            // vScrollBarLeft
+            // 
+            this.vScrollBarLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vScrollBarLeft.Location = new System.Drawing.Point(0, 145);
+            this.vScrollBarLeft.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.vScrollBarLeft.Name = "vScrollBarLeft";
+            this.vScrollBarLeft.Size = new System.Drawing.Size(36, 296);
+            this.vScrollBarLeft.TabIndex = 7;
+            this.vScrollBarLeft.Value = 50;
+            this.vScrollBarLeft.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBarLeft_Scroll);
+            // 
+            // buttonDone
+            // 
+            this.tableLayoutPanelPalettControl.SetColumnSpan(this.buttonDone, 4);
+            this.buttonDone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDone.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDone.ForeColor = System.Drawing.Color.Gray;
+            this.buttonDone.Location = new System.Drawing.Point(0, 446);
+            this.buttonDone.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonDone.Name = "buttonDone";
+            this.buttonDone.Size = new System.Drawing.Size(240, 28);
+            this.buttonDone.TabIndex = 0;
+            this.buttonDone.Text = "Done";
+            this.buttonDone.UseVisualStyleBackColor = true;
+            this.buttonDone.Click += new System.EventHandler(this.OnButtonDone_Click);
             // 
             // colorSpacePanelLeft
             // 
@@ -105,7 +147,7 @@
             this.colorSpacePanelLeft.Name = "colorSpacePanelLeft";
             this.colorSpacePanelLeft.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(149)))), ((int)(((byte)(237)))));
             this.colorSpacePanelLeft.Size = new System.Drawing.Size(84, 145);
-            this.colorSpacePanelLeft.TabIndex = 0;
+            this.colorSpacePanelLeft.TabIndex = 1;
             // 
             // cardCollectionLeft
             // 
@@ -115,8 +157,8 @@
             this.cardCollectionLeft.Location = new System.Drawing.Point(36, 145);
             this.cardCollectionLeft.Margin = new System.Windows.Forms.Padding(0);
             this.cardCollectionLeft.Name = "cardCollectionLeft";
-            this.cardCollectionLeft.Size = new System.Drawing.Size(84, 317);
-            this.cardCollectionLeft.TabIndex = 1;
+            this.cardCollectionLeft.Size = new System.Drawing.Size(84, 301);
+            this.cardCollectionLeft.TabIndex = 3;
             // 
             // colorSpacePanelRight
             // 
@@ -139,50 +181,8 @@
             this.cardCollectionRight.Location = new System.Drawing.Point(120, 145);
             this.cardCollectionRight.Margin = new System.Windows.Forms.Padding(0);
             this.cardCollectionRight.Name = "cardCollectionRight";
-            this.cardCollectionRight.Size = new System.Drawing.Size(84, 317);
-            this.cardCollectionRight.TabIndex = 3;
-            // 
-            // buttonBlockLeft
-            // 
-            this.buttonBlockLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonBlockLeft.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonBlockLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBlockLeft.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBlockLeft.ForeColor = System.Drawing.Color.Gray;
-            this.buttonBlockLeft.Location = new System.Drawing.Point(0, 0);
-            this.buttonBlockLeft.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonBlockLeft.Name = "buttonBlockLeft";
-            this.buttonBlockLeft.Size = new System.Drawing.Size(36, 145);
-            this.buttonBlockLeft.TabIndex = 4;
-            this.buttonBlockLeft.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBarLeft
-            // 
-            this.vScrollBarLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vScrollBarLeft.Location = new System.Drawing.Point(0, 145);
-            this.vScrollBarLeft.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.vScrollBarLeft.Name = "vScrollBarLeft";
-            this.vScrollBarLeft.Size = new System.Drawing.Size(36, 312);
-            this.vScrollBarLeft.TabIndex = 6;
-            this.vScrollBarLeft.Value = 50;
-            this.vScrollBarLeft.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBarLeft_Scroll);
-            // 
-            // buttonDone
-            // 
-            this.tableLayoutPanelPalettControl.SetColumnSpan(this.buttonDone, 4);
-            this.buttonDone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDone.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDone.ForeColor = System.Drawing.Color.Gray;
-            this.buttonDone.Location = new System.Drawing.Point(0, 462);
-            this.buttonDone.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonDone.Name = "buttonDone";
-            this.buttonDone.Size = new System.Drawing.Size(240, 28);
-            this.buttonDone.TabIndex = 8;
-            this.buttonDone.Text = "Done";
-            this.buttonDone.UseVisualStyleBackColor = true;
-            this.buttonDone.Click += new System.EventHandler(this.OnButtonDone_Click);
+            this.cardCollectionRight.Size = new System.Drawing.Size(84, 301);
+            this.cardCollectionRight.TabIndex = 4;
             // 
             // PalettControl
             // 
@@ -192,7 +192,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PalettControl";
-            this.Size = new System.Drawing.Size(240, 490);
+            this.Size = new System.Drawing.Size(240, 474);
+            this.Load += new System.EventHandler(this.PalettControl_Load);
             this.tableLayoutPanelPalettControl.ResumeLayout(false);
             this.ResumeLayout(false);
 

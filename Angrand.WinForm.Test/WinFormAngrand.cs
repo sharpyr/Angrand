@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Angrand.PalettApp {
@@ -10,9 +9,10 @@ namespace Angrand.PalettApp {
 
     private void WinFormAngrand_Load(object sender, EventArgs e) { }
 
-    private void palettControlMajor_Load(object sender, EventArgs e) {
-      palettControlMajor.OnButtonDoneClicked += this.Close;
-      palettControlMajor.ColorPair = (Color.DarkTurquoise, Color.LightBlue);
+
+    private void presetPalettControl_Load(object sender, EventArgs e) {
+      presetPalettControl.OnDoneClicked += this.Close;
+      // presetPalettControl.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
   }
 }
