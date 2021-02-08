@@ -93,7 +93,6 @@
             this.presetQueue.Name = "presetQueue";
             this.presetQueue.Size = new System.Drawing.Size(240, 90);
             this.presetQueue.TabIndex = 4;
-            this.presetQueue.Load += new System.EventHandler(this.presetQueue_Load);
             // 
             // palettControl
             // 
@@ -105,7 +104,6 @@
             this.palettControl.Name = "palettControl";
             this.palettControl.Size = new System.Drawing.Size(240, 513);
             this.palettControl.TabIndex = 5;
-            this.palettControl.Load += new System.EventHandler(this.palettControl_Load);
             // 
             // PresetPalettControl
             // 
