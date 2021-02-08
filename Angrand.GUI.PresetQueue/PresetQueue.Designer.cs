@@ -416,7 +416,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanelPresetQueue);
-            this.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PresetQueue";
             this.Size = new System.Drawing.Size(240, 122);

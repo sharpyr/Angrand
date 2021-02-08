@@ -96,7 +96,7 @@
             // colorSpacePanelLeft
             // 
             this.colorSpacePanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSpacePanelLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.colorSpacePanelLeft.ForeColor = System.Drawing.Color.Gray;
             this.colorSpacePanelLeft.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("colorSpacePanelLeft.Hsl")));
             this.colorSpacePanelLeft.Location = new System.Drawing.Point(36, 0);
             this.colorSpacePanelLeft.Margin = new System.Windows.Forms.Padding(0);
@@ -120,7 +120,7 @@
             // colorSpacePanelRight
             // 
             this.colorSpacePanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSpacePanelRight.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.colorSpacePanelRight.ForeColor = System.Drawing.Color.Gray;
             this.colorSpacePanelRight.Hsl = ((System.ValueTuple<float, float, float>)(resources.GetObject("colorSpacePanelRight.Hsl")));
             this.colorSpacePanelRight.Location = new System.Drawing.Point(120, 0);
             this.colorSpacePanelRight.Margin = new System.Windows.Forms.Padding(0);
