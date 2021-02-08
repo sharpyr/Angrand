@@ -6,7 +6,7 @@ namespace Angrand.GUI.PalettControl {
   public partial class MatrixPalettControl : UserControl {
     public MatrixPalettControl() {
       InitializeComponent();
-      this.cardMatrix.OnClicked += OnCardCollectionClicked;
+      this.cardMatrix.OnClicked += OnCardMatrixClicked;
       this.colorSpacePanel.OnIndexChanged += OnColorSpacePanelIndexChanged;
       // this.Color = Color.FromArgb(0, 204, 204);
     }
@@ -16,7 +16,7 @@ namespace Angrand.GUI.PalettControl {
     }
     public event Action OnDoneClicked;
     private void OnButtonDone_Click(object sender, EventArgs e) => OnDoneClicked?.Invoke();
-    public void OnCardCollectionClicked(Color color) {
+    public void OnCardMatrixClicked(Color color) {
       this.colorSpacePanel.Rgb = color;
       var l = (int) (color.GetBrightness() * 100);
       this.vScrollBar.Value = l;
