@@ -6,9 +6,7 @@ namespace Angrand.GUI.CardCollection {
   public partial class CardMatrix : UserControl {
     public Color CardColor { get; set; }
 
-    public CardMatrix() {
-      InitializeComponent();
-    }
+    public CardMatrix() { InitializeComponent(); }
 
     public event Action<Color> OnClicked;
 

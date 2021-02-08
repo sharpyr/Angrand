@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -14,7 +14,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms"/>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
@@ -22,11 +22,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj"/>
-    <ProjectReference Include="..\Angrand.GUI.ColorSpacePanel\Angrand.GUI.ColorSpacePanel.csproj"/>
-    <ProjectReference Include="..\Angrand.GUI.PresetQueue\Angrand.GUI.PresetQueue.csproj"/>
+    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj" />
+    <ProjectReference Include="..\Angrand.GUI.ColorSpacePanel\Angrand.GUI.ColorSpacePanel.csproj" />
+    <ProjectReference Include="..\Angrand.GUI.PresetQueue\Angrand.GUI.PresetQueue.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MatrixPalettControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="PresetPalettControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
