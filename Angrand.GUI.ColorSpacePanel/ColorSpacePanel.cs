@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Palett.Convert;
@@ -6,6 +7,8 @@ using Veho.Vector;
 
 namespace Angrand.GUI.ColorSpacePanel {
   public partial class ColorSpacePanel : UserControl {
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public Color Rgb {
       get => Color.FromArgb(comboBoxR.SelectedIndex, comboBoxG.SelectedIndex, comboBoxB.SelectedIndex);
       set {
@@ -20,6 +23,8 @@ namespace Angrand.GUI.ColorSpacePanel {
       }
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public (float h, float s, float l) Hsl {
       get => (comboBoxH.SelectedIndex, comboBoxS.SelectedIndex, comboBoxL.SelectedIndex);
       set {

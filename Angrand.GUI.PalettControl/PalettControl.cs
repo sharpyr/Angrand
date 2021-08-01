@@ -15,6 +15,8 @@ namespace Angrand.GUI.PalettControl {
       // this.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public (Color min, Color max) Preset {
       get => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb);
       set => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb) = value;

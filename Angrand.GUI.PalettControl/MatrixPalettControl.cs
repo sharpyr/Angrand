@@ -10,6 +10,9 @@ namespace Angrand.GUI.PalettControl {
       this.colorSpacePanel.OnIndexChanged += OnColorSpacePanelIndexChanged;
       // this.Color = Color.FromArgb(0, 204, 204);
     }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public Color Color {
       get => this.colorSpacePanel.Rgb;
       set => this.colorSpacePanel.Rgb = value;
