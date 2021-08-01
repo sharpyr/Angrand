@@ -12,14 +12,13 @@ namespace Angrand.GUI.ColorSpacePanel {
     public Color Rgb {
       get => Color.FromArgb(comboBoxR.SelectedIndex, comboBoxG.SelectedIndex, comboBoxB.SelectedIndex);
       set {
-        this.RgbCollectionEnabled = false;
+        this.RgbEnabled = false;
         // Debug.Print($"set rgb {value} (hsl: {value.ColorToHsl()})");
         this.comboBoxR.SelectedIndex = value.R;
         this.comboBoxG.SelectedIndex = value.G;
         this.comboBoxB.SelectedIndex = value.B;
-        if (this.HslCollectionEnabled) this.Hsl = value.ColorToHsl();
-        OnColorChanged?.Invoke(this.Rgb);
-        this.RgbCollectionEnabled = true;
+        if (this.HslEnabled) this.Hsl = value.ColorToHsl();
+        this.RgbEnabled = true;
       }
     }
 
@@ -28,32 +27,33 @@ namespace Angrand.GUI.ColorSpacePanel {
     public (float h, float s, float l) Hsl {
       get => (comboBoxH.SelectedIndex, comboBoxS.SelectedIndex, comboBoxL.SelectedIndex);
       set {
-        this.HslCollectionEnabled = false;
+        this.HslEnabled = false;
         // Debug.Print($"set hsl {value} (rgb {value.HslToRgb()})");
         this.comboBoxH.SelectedIndex = (int) value.h;
         this.comboBoxS.SelectedIndex = (int) value.s;
         this.comboBoxL.SelectedIndex = (int) value.l;
-        if (this.RgbCollectionEnabled) this.Rgb = value.HslToColor();
-        OnColorChanged?.Invoke(this.Rgb);
-        this.HslCollectionEnabled = true;
+        if (this.RgbEnabled) this.Rgb = value.HslToColor();
+        this.HslEnabled = true;
       }
     }
 
     public event Action<Color> OnColorChanged;
 
-    public bool RgbCollectionEnabled = true;
-    public bool HslCollectionEnabled = true;
+    public bool RgbEnabled = true;
+    public bool HslEnabled = true;
 
-    private void UpdateHslCollection((float, float, float) hsl) {
-      this.RgbCollectionEnabled = false;
+    private void UpdateHsl((float, float, float) hsl) {
+      this.RgbEnabled = false;
       this.Hsl = hsl;
-      this.RgbCollectionEnabled = true;
+      OnColorChanged?.Invoke(this.Rgb);
+      this.RgbEnabled = true;
     }
 
-    private void UpdateRgbCollection(Color color) {
-      this.HslCollectionEnabled = false;
+    private void UpdateRgb(Color color) {
+      this.HslEnabled = false;
       this.Rgb = color;
-      this.HslCollectionEnabled = true;
+      OnColorChanged?.Invoke(color);
+      this.HslEnabled = true;
     }
 
     public ColorSpacePanel() {
@@ -69,15 +69,13 @@ namespace Angrand.GUI.ColorSpacePanel {
     }
 
     private void RgbSelectedIndexChanged(object sender, EventArgs e) {
-      if (!this.RgbCollectionEnabled) return;
-      this.UpdateHslCollection(this.Rgb.ColorToHsl());
-      OnColorChanged?.Invoke(this.Rgb);
+      if (!this.RgbEnabled) return;
+      this.UpdateHsl(this.Rgb.ColorToHsl());
     }
 
     private void HslSelectedIndexChanged(object sender, EventArgs e) {
-      if (!this.HslCollectionEnabled) return;
-      this.UpdateRgbCollection(this.Hsl.HslToColor());
-      OnColorChanged?.Invoke(this.Rgb);
+      if (!this.HslEnabled) return;
+      this.UpdateRgb(this.Hsl.HslToColor());
     }
   }
 }
