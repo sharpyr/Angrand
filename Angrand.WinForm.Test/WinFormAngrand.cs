@@ -7,13 +7,13 @@ namespace Angrand.PalettApp {
   public partial class WinFormAngrand : Form {
     public WinFormAngrand() {
       InitializeComponent();
+      Console.WriteLine("----------------------------");
     }
 
     private void WinFormAngrand_Load(object sender, EventArgs e) {
-      presetPalettControl1.OnLeftUpdated += this.OnLeftUpdated;
-      presetPalettControl1.OnRightUpdated += this.OnRightUpdated;
+      presetPalettControl.OnLeftUpdated += this.OnLeftUpdated;
+      presetPalettControl.OnRightUpdated += this.OnRightUpdated;
     }
-
 
     private void presetPalettControl_Load(object sender, EventArgs e) {
       // presetPalettControl.OnDoneClicked += this.Close;

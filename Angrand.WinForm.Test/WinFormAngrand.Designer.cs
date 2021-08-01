@@ -33,22 +33,22 @@ namespace Angrand.PalettApp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormAngrand));
-            this.presetPalettControl1 = new Angrand.GUI.PalettControl.PresetPalettControl();
+            this.presetPalettControl = new Angrand.GUI.PalettControl.PresetPalettControl();
             this.matrixPalettControl1 = new Angrand.GUI.PalettControl.MatrixPalettControl();
             this.SuspendLayout();
             // 
-            // presetPalettControl1
+            // presetPalettControl
             // 
-            this.presetPalettControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.presetPalettControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.presetPalettControl1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.presetPalettControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presetPalettControl1.ForeColor = System.Drawing.Color.DarkGray;
-            this.presetPalettControl1.Location = new System.Drawing.Point(0, 0);
-            this.presetPalettControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.presetPalettControl1.Name = "presetPalettControl1";
-            this.presetPalettControl1.Size = new System.Drawing.Size(224, 650);
-            this.presetPalettControl1.TabIndex = 0;
+            this.presetPalettControl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.presetPalettControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presetPalettControl.ForeColor = System.Drawing.Color.DarkGray;
+            this.presetPalettControl.Location = new System.Drawing.Point(0, 0);
+            this.presetPalettControl.Margin = new System.Windows.Forms.Padding(0);
+            this.presetPalettControl.Name = "presetPalettControl";
+            this.presetPalettControl.Size = new System.Drawing.Size(224, 650);
+            this.presetPalettControl.TabIndex = 0;
             // 
             // matrixPalettControl1
             // 
@@ -68,7 +68,7 @@ namespace Angrand.PalettApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(224, 985);
             this.Controls.Add(this.matrixPalettControl1);
-            this.Controls.Add(this.presetPalettControl1);
+            this.Controls.Add(this.presetPalettControl);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "WinFormAngrand";
@@ -80,7 +80,7 @@ namespace Angrand.PalettApp
 
         #endregion
 
-        private PresetPalettControl presetPalettControl1;
+        private PresetPalettControl presetPalettControl;
         private MatrixPalettControl matrixPalettControl1;
     }
 }
