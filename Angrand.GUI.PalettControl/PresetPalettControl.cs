@@ -21,6 +21,15 @@ namespace Angrand.GUI.PalettControl {
       add => palettControl.OnDoneClicked += value;
       remove => palettControl.OnDoneClicked -= value;
     }
+    public event Action<Color> OnLeftUpdated {
+      add => palettControl.OnLeftUpdated += value;
+      remove => palettControl.OnLeftUpdated -= value;
+    }
+    public event Action<Color> OnRightUpdated {
+      add => palettControl.OnRightUpdated += value;
+      remove => palettControl.OnRightUpdated -= value;
+    }
+
     private void PresetQueuePresetClicked((Color min, Color max) preset) => palettControl.Preset = preset;
     private void PresetQueueChevronClicked(int index) => presetQueue.SetColor(index, this.palettControl.Preset);
   }
