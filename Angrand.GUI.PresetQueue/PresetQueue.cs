@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Veho.Vector;
@@ -10,6 +11,8 @@ namespace Angrand.GUI.PresetQueue {
       // this.Presets = Utils.PresetCollection;
     }
     public int Count => this.tableLayoutPanelPresetQueue.RowCount - 1;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public (Color min, Color max)[] Presets {
       get => Inits.Init(this.Count, this.GetColor);
       set => value.Iterate(this.SetColor);

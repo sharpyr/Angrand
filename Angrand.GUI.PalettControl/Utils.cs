@@ -26,7 +26,7 @@ namespace Angrand.GUI.PalettControl {
       button.BackColor = color;
       button.Text = value.ToString();
     }
-
+    
     public static (float h, float s, float l) UpdateLightness(this (float h, float s, float l) hsl, float newLight) =>
       (hsl.h, hsl.s, newLight);
   }

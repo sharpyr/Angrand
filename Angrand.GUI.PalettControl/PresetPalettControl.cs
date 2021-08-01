@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -9,10 +10,14 @@ namespace Angrand.GUI.PalettControl {
       presetQueue.OnPresetClicked += this.PresetQueuePresetClicked;
       presetQueue.OnChevronClicked += this.PresetQueueChevronClicked;
     }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public (Color min, Color max) Preset {
       get => palettControl.Preset;
       set => palettControl.Preset = value;
     }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public (Color min, Color max)[] PresetCollection {
       get => presetQueue.Presets;
       set => presetQueue.Presets = value;
