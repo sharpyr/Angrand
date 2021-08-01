@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -10,8 +11,8 @@ namespace Angrand.GUI.PalettControl {
       InitializeComponent();
       this.cardCollectionLeft.OnClicked += OnCardCollectionLeftClicked;
       this.cardCollectionRight.OnClicked += OnCardCollectionRightClicked;
-      this.colorSpacePanelLeft.OnIndexChanged += OnColorSpacePanelLeftIndexChanged;
-      this.colorSpacePanelRight.OnIndexChanged += OnColorSpacePanelRightIndexChanged;
+      this.colorSpacePanelLeft.OnColorChanged += OnColorSpacePanelLeftIndexChanged;
+      this.colorSpacePanelRight.OnColorChanged += OnColorSpacePanelRightIndexChanged;
       // this.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
 
@@ -34,50 +35,46 @@ namespace Angrand.GUI.PalettControl {
 
     public void OnCardCollectionLeftClicked(Color color) {
       this.colorSpacePanelLeft.Rgb = color;
-      var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBarLeft.Value = l;
-      this.buttonBlockLeft.LocalUpdate(l, color);
-      this.OnLeftUpdated?.Invoke(color);
+      var value = (int) (color.GetBrightness() * 100);
+      this.vScrollBarLeft.Value = value;
+      this.buttonBlockLeft.LocalUpdate(value, color);
     }
 
     public void OnCardCollectionRightClicked(Color color) {
       this.colorSpacePanelRight.Rgb = color;
-      var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBarRight.Value = l;
-      this.buttonBlockRight.LocalUpdate(l, color);
-      this.OnRightUpdated?.Invoke(color);
+      var value = (int) (color.GetBrightness() * 100);
+      this.vScrollBarRight.Value = value;
+      this.buttonBlockRight.LocalUpdate(value, color);
     }
 
     private void vScrollBarLeft_Scroll(object sender, ScrollEventArgs e) {
-      this.colorSpacePanelLeft.OnIndexChanged -= OnColorSpacePanelLeftIndexChanged;
+      this.colorSpacePanelLeft.OnColorChanged -= OnColorSpacePanelLeftIndexChanged;
       var hsl = this.colorSpacePanelLeft.Hsl.UpdateLightness(this.vScrollBarLeft.Value);
       this.colorSpacePanelLeft.Hsl = hsl;
-      this.colorSpacePanelLeft.OnIndexChanged += OnColorSpacePanelLeftIndexChanged;
+      this.colorSpacePanelLeft.OnColorChanged += OnColorSpacePanelLeftIndexChanged;
       var color = this.colorSpacePanelLeft.Rgb;
       this.buttonBlockLeft.LocalUpdate((int) hsl.l, color);
-      this.OnLeftUpdated?.Invoke(color);
     }
     private void vScrollBarRight_Scroll(object sender, ScrollEventArgs e) {
-      this.colorSpacePanelRight.OnIndexChanged -= OnColorSpacePanelRightIndexChanged;
+      this.colorSpacePanelRight.OnColorChanged -= OnColorSpacePanelRightIndexChanged;
       var hsl = this.colorSpacePanelRight.Hsl.UpdateLightness(this.vScrollBarRight.Value);
       this.colorSpacePanelRight.Hsl = hsl;
-      this.colorSpacePanelRight.OnIndexChanged += OnColorSpacePanelRightIndexChanged;
+      this.colorSpacePanelRight.OnColorChanged += OnColorSpacePanelRightIndexChanged;
       var color = this.colorSpacePanelRight.Rgb;
       this.buttonBlockRight.LocalUpdate((int) hsl.l, color);
-      this.OnRightUpdated?.Invoke(color);
     }
 
     public void OnColorSpacePanelLeftIndexChanged(Color color) {
-      var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBarLeft.Value = l;
-      this.buttonBlockLeft.LocalUpdate(l, color);
+      var value = (int) (color.GetBrightness() * 100);
+      this.vScrollBarLeft.Value = value;
+      this.buttonBlockLeft.LocalUpdate(value, color);
       this.OnLeftUpdated?.Invoke(color);
     }
 
     public void OnColorSpacePanelRightIndexChanged(Color color) {
-      var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBarRight.Value = l;
-      this.buttonBlockRight.LocalUpdate(l, color);
+      var value = (int) (color.GetBrightness() * 100);
+      this.vScrollBarRight.Value = value;
+      this.buttonBlockRight.LocalUpdate(value, color);
       this.OnRightUpdated?.Invoke(color);
     }
   }

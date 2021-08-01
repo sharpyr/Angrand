@@ -18,7 +18,7 @@ namespace Angrand.GUI.ColorSpacePanel {
         this.comboBoxG.SelectedIndex = value.G;
         this.comboBoxB.SelectedIndex = value.B;
         if (this.HslCollectionEnabled) this.Hsl = value.ColorToHsl();
-        OnIndexChanged?.Invoke(this.Rgb);
+        OnColorChanged?.Invoke(this.Rgb);
         this.RgbCollectionEnabled = true;
       }
     }
@@ -34,12 +34,12 @@ namespace Angrand.GUI.ColorSpacePanel {
         this.comboBoxS.SelectedIndex = (int) value.s;
         this.comboBoxL.SelectedIndex = (int) value.l;
         if (this.RgbCollectionEnabled) this.Rgb = value.HslToColor();
-        OnIndexChanged?.Invoke(this.Rgb);
+        OnColorChanged?.Invoke(this.Rgb);
         this.HslCollectionEnabled = true;
       }
     }
 
-    public event Action<Color> OnIndexChanged;
+    public event Action<Color> OnColorChanged;
 
     public bool RgbCollectionEnabled = true;
     public bool HslCollectionEnabled = true;
@@ -71,13 +71,13 @@ namespace Angrand.GUI.ColorSpacePanel {
     private void RgbSelectedIndexChanged(object sender, EventArgs e) {
       if (!this.RgbCollectionEnabled) return;
       this.UpdateHslCollection(this.Rgb.ColorToHsl());
-      OnIndexChanged?.Invoke(this.Rgb);
+      OnColorChanged?.Invoke(this.Rgb);
     }
 
     private void HslSelectedIndexChanged(object sender, EventArgs e) {
       if (!this.HslCollectionEnabled) return;
       this.UpdateRgbCollection(this.Hsl.HslToColor());
-      OnIndexChanged?.Invoke(this.Rgb);
+      OnColorChanged?.Invoke(this.Rgb);
     }
   }
 }

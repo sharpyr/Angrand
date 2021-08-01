@@ -29,7 +29,6 @@ namespace Angrand.GUI.PalettControl {
       add => palettControl.OnRightUpdated += value;
       remove => palettControl.OnRightUpdated -= value;
     }
-
     private void PresetQueuePresetClicked((Color min, Color max) preset) => palettControl.Preset = preset;
     private void PresetQueueChevronClicked(int index) => presetQueue.SetColor(index, this.palettControl.Preset);
   }

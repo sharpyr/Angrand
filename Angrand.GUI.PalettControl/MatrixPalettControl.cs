@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace Angrand.GUI.PalettControl {
     public MatrixPalettControl() {
       InitializeComponent();
       this.cardMatrix.OnClicked += OnCardMatrixClicked;
-      this.colorSpacePanel.OnIndexChanged += OnColorSpacePanelIndexChanged;
+      this.colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
       // this.Color = Color.FromArgb(0, 204, 204);
     }
 
@@ -26,10 +27,10 @@ namespace Angrand.GUI.PalettControl {
       this.buttonBlock.LocalUpdate(l, color);
     }
     private void vScrollBar_Scroll(object sender, ScrollEventArgs e) {
-      this.colorSpacePanel.OnIndexChanged -= OnColorSpacePanelIndexChanged;
+      this.colorSpacePanel.OnColorChanged -= OnColorSpacePanelIndexChanged;
       var hsl = this.colorSpacePanel.Hsl.UpdateLightness(this.vScrollBar.Value);
       this.colorSpacePanel.Hsl = hsl;
-      this.colorSpacePanel.OnIndexChanged += OnColorSpacePanelIndexChanged;
+      this.colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
       this.buttonBlock.LocalUpdate((int) hsl.l, this.colorSpacePanel.Rgb);
     }
     public void OnColorSpacePanelIndexChanged(Color color) {
