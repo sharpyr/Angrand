@@ -21,7 +21,11 @@ namespace Angrand.GUI.PalettControl {
     [Browsable(false)]
     public (Color min, Color max) Preset {
       get => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb);
-      set => (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb) = value;
+      set {
+        (this.colorSpacePanelLeft.Rgb, this.colorSpacePanelRight.Rgb) = value;
+        this.UpdateLeft(value.min);
+        this.UpdateRight(value.max);
+      }
     }
 
     private void PalettControl_Load(object sender, EventArgs e) {
@@ -34,18 +38,25 @@ namespace Angrand.GUI.PalettControl {
 
     private void OnButtonDone_Click(object sender, EventArgs e) => OnDoneClicked?.Invoke();
 
-    public void OnCardCollectionLeftClicked(Color color) {
-      this.colorSpacePanelLeft.Rgb = color;
+    public void UpdateLeft(Color color) {
       var value = (int) (color.GetBrightness() * 100);
       this.vScrollBarLeft.Value = value;
       this.buttonBlockLeft.LocalUpdate(value, color);
     }
-
-    public void OnCardCollectionRightClicked(Color color) {
-      this.colorSpacePanelRight.Rgb = color;
+    public void UpdateRight(Color color) {
       var value = (int) (color.GetBrightness() * 100);
       this.vScrollBarRight.Value = value;
       this.buttonBlockRight.LocalUpdate(value, color);
+    }
+
+    public void OnCardCollectionLeftClicked(Color color) {
+      this.colorSpacePanelLeft.Rgb = color;
+      this.UpdateLeft(color);
+    }
+
+    public void OnCardCollectionRightClicked(Color color) {
+      this.colorSpacePanelRight.Rgb = color;
+      this.UpdateRight(color);
     }
 
     private void vScrollBarLeft_Scroll(object sender, ScrollEventArgs e) {
@@ -82,7 +93,7 @@ namespace Angrand.GUI.PalettControl {
     }
 
     private void buttonBlockRight_BackColorChanged(object sender, EventArgs e) {
-      this.OnRightUpdated?.Invoke(buttonBlockLeft.BackColor);
+      this.OnRightUpdated?.Invoke(buttonBlockRight.BackColor);
     }
   }
 }
