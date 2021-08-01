@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Angrand.GUI.PalettControl;
 
@@ -8,7 +9,10 @@ namespace Angrand.PalettApp {
       InitializeComponent();
     }
 
-    private void WinFormAngrand_Load(object sender, EventArgs e) { }
+    private void WinFormAngrand_Load(object sender, EventArgs e) {
+      presetPalettControl1.OnLeftUpdated += this.OnLeftUpdated;
+      presetPalettControl1.OnRightUpdated += this.OnRightUpdated;
+    }
 
 
     private void presetPalettControl_Load(object sender, EventArgs e) {
@@ -16,10 +20,11 @@ namespace Angrand.PalettApp {
       // presetPalettControl.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
     }
 
-
-    private void presetPalettControl1_Load_1(object sender, EventArgs e) {
-      // presetPalettControl1.Preset = Utils.DefaultPreset;
-      // presetPalettControl1.PresetCollection = Utils.PresetCollection;
+    private void OnLeftUpdated(Color color) {
+      Console.WriteLine($"Left Color: {color}");
+    }
+    private void OnRightUpdated(Color color) {
+      Console.WriteLine($"Right Color: {color}");
     }
   }
 }

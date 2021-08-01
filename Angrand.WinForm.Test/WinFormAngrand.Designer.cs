@@ -47,13 +47,6 @@ namespace Angrand.PalettApp
             this.presetPalettControl1.Location = new System.Drawing.Point(0, 0);
             this.presetPalettControl1.Margin = new System.Windows.Forms.Padding(0);
             this.presetPalettControl1.Name = "presetPalettControl1";
-            this.presetPalettControl1.Preset = ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.Preset")));
-            this.presetPalettControl1.PresetCollection = new System.ValueTuple<System.Drawing.Color, System.Drawing.Color>[] {
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.PresetCollection"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.PresetCollection1"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.PresetCollection2"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.PresetCollection3"))),
-        ((System.ValueTuple<System.Drawing.Color, System.Drawing.Color>)(resources.GetObject("presetPalettControl1.PresetCollection4")))};
             this.presetPalettControl1.Size = new System.Drawing.Size(224, 650);
             this.presetPalettControl1.TabIndex = 0;
             // 
