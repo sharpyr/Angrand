@@ -72,7 +72,7 @@
             this.tableLayoutPanelColorControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.665F));
             this.tableLayoutPanelColorControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.665F));
             this.tableLayoutPanelColorControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.675F));
-            this.tableLayoutPanelColorControlPanel.Size = new System.Drawing.Size(60, 160);
+            this.tableLayoutPanelColorControlPanel.Size = new System.Drawing.Size(80, 160);
             this.tableLayoutPanelColorControlPanel.TabIndex = 0;
             // 
             // labelL
@@ -151,7 +151,7 @@
             this.comboBoxR.Location = new System.Drawing.Point(21, 1);
             this.comboBoxR.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxR.Name = "comboBoxR";
-            this.comboBoxR.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxR.Size = new System.Drawing.Size(58, 29);
             this.comboBoxR.TabIndex = 0;
             this.comboBoxR.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -166,7 +166,7 @@
             this.comboBoxG.Location = new System.Drawing.Point(21, 27);
             this.comboBoxG.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxG.Name = "comboBoxG";
-            this.comboBoxG.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxG.Size = new System.Drawing.Size(58, 29);
             this.comboBoxG.TabIndex = 1;
             this.comboBoxG.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -181,7 +181,7 @@
             this.comboBoxB.Location = new System.Drawing.Point(21, 53);
             this.comboBoxB.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxB.Name = "comboBoxB";
-            this.comboBoxB.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxB.Size = new System.Drawing.Size(58, 29);
             this.comboBoxB.TabIndex = 2;
             this.comboBoxB.SelectedIndexChanged += new System.EventHandler(this.RgbSelectedIndexChanged);
             // 
@@ -196,7 +196,7 @@
             this.comboBoxH.Location = new System.Drawing.Point(21, 79);
             this.comboBoxH.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxH.Name = "comboBoxH";
-            this.comboBoxH.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxH.Size = new System.Drawing.Size(58, 29);
             this.comboBoxH.TabIndex = 3;
             this.comboBoxH.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
@@ -211,7 +211,7 @@
             this.comboBoxS.Location = new System.Drawing.Point(21, 105);
             this.comboBoxS.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxS.Name = "comboBoxS";
-            this.comboBoxS.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxS.Size = new System.Drawing.Size(58, 29);
             this.comboBoxS.TabIndex = 4;
             this.comboBoxS.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
@@ -226,7 +226,7 @@
             this.comboBoxL.Location = new System.Drawing.Point(21, 131);
             this.comboBoxL.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxL.Name = "comboBoxL";
-            this.comboBoxL.Size = new System.Drawing.Size(38, 29);
+            this.comboBoxL.Size = new System.Drawing.Size(58, 29);
             this.comboBoxL.TabIndex = 5;
             this.comboBoxL.SelectedIndexChanged += new System.EventHandler(this.HslSelectedIndexChanged);
             // 
@@ -251,7 +251,7 @@
             this.ForeColor = System.Drawing.Color.Gray;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ColorSpacePanel";
-            this.Size = new System.Drawing.Size(60, 160);
+            this.Size = new System.Drawing.Size(80, 160);
             this.tableLayoutPanelColorControlPanel.ResumeLayout(false);
             this.tableLayoutPanelColorControlPanel.PerformLayout();
             this.ResumeLayout(false);

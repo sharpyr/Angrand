@@ -32,9 +32,9 @@ namespace Angrand.PalettApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormAngrand));
             this.presetPalettControl = new Angrand.GUI.PalettControl.PresetPalettControl();
             this.matrixPalettControl1 = new Angrand.GUI.PalettControl.MatrixPalettControl();
+            this.buttonSetEmpty = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // presetPalettControl
@@ -55,18 +55,28 @@ namespace Angrand.PalettApp
             this.matrixPalettControl1.BackColor = System.Drawing.SystemColors.Control;
             this.matrixPalettControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matrixPalettControl1.ForeColor = System.Drawing.Color.DarkGray;
-            this.matrixPalettControl1.Location = new System.Drawing.Point(53, 676);
+            this.matrixPalettControl1.Location = new System.Drawing.Point(0, 704);
             this.matrixPalettControl1.Margin = new System.Windows.Forms.Padding(0);
             this.matrixPalettControl1.Name = "matrixPalettControl1";
-            this.matrixPalettControl1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(204)))), ((int)(((byte)(211)))));
-            this.matrixPalettControl1.Size = new System.Drawing.Size(120, 300);
+            this.matrixPalettControl1.Size = new System.Drawing.Size(224, 272);
             this.matrixPalettControl1.TabIndex = 1;
+            // 
+            // buttonSetEmpty
+            // 
+            this.buttonSetEmpty.Location = new System.Drawing.Point(42, 653);
+            this.buttonSetEmpty.Name = "buttonSetEmpty";
+            this.buttonSetEmpty.Size = new System.Drawing.Size(137, 34);
+            this.buttonSetEmpty.TabIndex = 2;
+            this.buttonSetEmpty.Text = "Set Empty";
+            this.buttonSetEmpty.UseVisualStyleBackColor = true;
+            this.buttonSetEmpty.Click += new System.EventHandler(this.buttonSetEmpty_Click);
             // 
             // WinFormAngrand
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(224, 985);
+            this.Controls.Add(this.buttonSetEmpty);
             this.Controls.Add(this.matrixPalettControl1);
             this.Controls.Add(this.presetPalettControl);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -82,6 +92,7 @@ namespace Angrand.PalettApp
 
         private PresetPalettControl presetPalettControl;
         private MatrixPalettControl matrixPalettControl1;
+        private System.Windows.Forms.Button buttonSetEmpty;
     }
 }
 

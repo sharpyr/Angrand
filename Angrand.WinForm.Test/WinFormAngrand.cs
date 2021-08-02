@@ -8,7 +8,8 @@ namespace Angrand.PalettApp {
     public WinFormAngrand() {
       InitializeComponent();
       Console.WriteLine("----------------------------");
-      presetPalettControl.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
+      // presetPalettControl.Preset = (Color.FromArgb(0, 204, 204), Color.FromArgb(153, 153, 255));
+      presetPalettControl.Preset = (Color.Aqua, Color.Empty);
     }
 
     private void WinFormAngrand_Load(object sender, EventArgs e) {
@@ -26,6 +27,10 @@ namespace Angrand.PalettApp {
     }
     private void OnRightUpdated(Color color) {
       Console.WriteLine($"Right Color: {color}");
+    }
+
+    private void buttonSetEmpty_Click(object sender, EventArgs e) {
+      presetPalettControl.Preset = (Color.Empty, Color.Empty);
     }
   }
 }

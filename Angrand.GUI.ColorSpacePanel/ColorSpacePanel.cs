@@ -7,18 +7,26 @@ using Veho.Vector;
 
 namespace Angrand.GUI.ColorSpacePanel {
   public partial class ColorSpacePanel : UserControl {
+    public bool RgbEnabled = true;
+    public bool HslEnabled = true;
+
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public Color Rgb {
-      get => Color.FromArgb(comboBoxR.SelectedIndex, comboBoxG.SelectedIndex, comboBoxB.SelectedIndex);
+      get => this.Enabled
+        ? Color.FromArgb(comboBoxR.SelectedIndex, comboBoxG.SelectedIndex, comboBoxB.SelectedIndex)
+        : Color.Empty;
       set {
         this.RgbEnabled = false;
-        // Debug.Print($"set rgb {value} (hsl: {value.ColorToHsl()})");
-        this.comboBoxR.SelectedIndex = value.R;
-        this.comboBoxG.SelectedIndex = value.G;
-        this.comboBoxB.SelectedIndex = value.B;
-        if (this.HslEnabled) this.Hsl = value.ColorToHsl();
+        this.SetRgbSelection(value);
+        this.Enabled = !value.IsEmpty;
+        if (this.HslEnabled) {
+          this.Hsl = value.ColorToHsl();
+        } else {
+          this.OnColorChanged?.Invoke(value);
+        }
         this.RgbEnabled = true;
+        // if (!this.HslEnabled) OnColorChanged?.Invoke(value);
       }
     }
 
@@ -28,31 +36,46 @@ namespace Angrand.GUI.ColorSpacePanel {
       get => (comboBoxH.SelectedIndex, comboBoxS.SelectedIndex, comboBoxL.SelectedIndex);
       set {
         this.HslEnabled = false;
-        // Debug.Print($"set hsl {value} (rgb {value.HslToRgb()})");
-        this.comboBoxH.SelectedIndex = (int) value.h;
-        this.comboBoxS.SelectedIndex = (int) value.s;
-        this.comboBoxL.SelectedIndex = (int) value.l;
-        if (this.RgbEnabled) this.Rgb = value.HslToColor();
+        this.SetHslSelection(value);
+        if (this.RgbEnabled) {
+          this.Rgb = value.HslToColor();
+        } else {
+          this.OnColorChanged?.Invoke(value.HslToColor());
+        }
         this.HslEnabled = true;
+        // if (!this.RgbEnabled) OnColorChanged?.Invoke(value.HslToColor());
       }
     }
 
     public event Action<Color> OnColorChanged;
 
-    public bool RgbEnabled = true;
-    public bool HslEnabled = true;
-
+    private void SetRgbSelection(Color color) {
+      if (color.IsEmpty) {
+        this.comboBoxR.SelectedIndex = 0;
+        this.comboBoxG.SelectedIndex = 0;
+        this.comboBoxB.SelectedIndex = 0;
+      } else {
+        this.comboBoxR.SelectedIndex = color.R;
+        this.comboBoxG.SelectedIndex = color.G;
+        this.comboBoxB.SelectedIndex = color.B;
+      }
+    }
+    private void SetHslSelection((float h, float s, float l) hsl) {
+      this.comboBoxH.SelectedIndex = (int) hsl.h;
+      this.comboBoxS.SelectedIndex = (int) hsl.s;
+      this.comboBoxL.SelectedIndex = (int) hsl.l;
+    }
     private void UpdateHsl((float, float, float) hsl) {
       this.RgbEnabled = false;
       this.Hsl = hsl;
-      OnColorChanged?.Invoke(this.Rgb);
+      // OnColorChanged?.Invoke(this.Rgb);
       this.RgbEnabled = true;
     }
 
     private void UpdateRgb(Color color) {
       this.HslEnabled = false;
       this.Rgb = color;
-      OnColorChanged?.Invoke(color);
+      // OnColorChanged?.Invoke(color);
       this.HslEnabled = true;
     }
 
