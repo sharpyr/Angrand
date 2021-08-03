@@ -91,7 +91,6 @@
             this.buttonBlockRight.Size = new System.Drawing.Size(44, 174);
             this.buttonBlockRight.TabIndex = 6;
             this.buttonBlockRight.UseVisualStyleBackColor = true;
-            this.buttonBlockRight.BackColorChanged += new System.EventHandler(this.buttonBlockRight_BackColorChanged);
             // 
             // colorSpacePanelLeft
             // 
@@ -151,7 +150,6 @@
             this.buttonBlockLeft.Size = new System.Drawing.Size(43, 174);
             this.buttonBlockLeft.TabIndex = 5;
             this.buttonBlockLeft.UseVisualStyleBackColor = true;
-            this.buttonBlockLeft.BackColorChanged += new System.EventHandler(this.buttonBlockLeft_BackColorChanged);
             // 
             // vScrollBarLeft
             // 
@@ -190,7 +188,6 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PalettControl";
             this.Size = new System.Drawing.Size(287, 568);
-            this.Load += new System.EventHandler(this.PalettControl_Load);
             this.tableLayoutPanelPalettControl.ResumeLayout(false);
             this.ResumeLayout(false);
 

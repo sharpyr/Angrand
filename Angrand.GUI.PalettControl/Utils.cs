@@ -23,10 +23,10 @@ namespace Angrand.GUI.PalettControl {
     }
 
     public static void LocalUpdate<T>(this Button button, T value, Color color) {
-      button.BackColor = color;
+      button.BackColor = color.IsEmpty ? Color.WhiteSmoke : color;
       button.Text = value.ToString();
     }
-    
+
     public static (float h, float s, float l) UpdateLightness(this (float h, float s, float l) hsl, float newLight) =>
       (hsl.h, hsl.s, newLight);
   }
