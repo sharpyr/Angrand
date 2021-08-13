@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Palett.Convert;
+using Veho;
 using Veho.Vector;
 
 namespace Angrand.GUI.ColorSpacePanel {
@@ -39,11 +40,11 @@ namespace Angrand.GUI.ColorSpacePanel {
     public ColorSpacePanel() {
       InitializeComponent();
       object[] indexes;
-      this.comboBoxR.Items.AddRange(indexes = Inits.Init(256, x => (object) x));
+      this.comboBoxR.Items.AddRange(indexes = Vec.Init(256, x => (object) x));
       this.comboBoxG.Items.AddRange(indexes); // indexes = Enumerable.Range(0, 256).Select(x => (object) x).ToArray();
       this.comboBoxB.Items.AddRange(indexes);
-      this.comboBoxH.Items.AddRange(indexes = Inits.Init(361, x => (object) x));
-      this.comboBoxS.Items.AddRange(indexes = Inits.Init(101, x => (object) x));
+      this.comboBoxH.Items.AddRange(indexes = Vec.Init(361, x => (object) x));
+      this.comboBoxS.Items.AddRange(indexes = Vec.Init(101, x => (object) x));
       this.comboBoxL.Items.AddRange(indexes);
       this.Rgb = Color.Gainsboro;
     }

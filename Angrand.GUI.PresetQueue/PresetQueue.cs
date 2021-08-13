@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using Veho;
 using Veho.Vector;
 
 namespace Angrand.GUI.PresetQueue {
@@ -14,7 +15,7 @@ namespace Angrand.GUI.PresetQueue {
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public (Color min, Color max)[] Presets {
-      get => Inits.Init(this.Count, this.GetColor);
+      get => Vec.Init(this.Count, this.GetColor);
       set => value.Iterate(this.SetColor);
     }
 
