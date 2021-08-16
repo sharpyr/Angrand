@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Angrand.GUI.PalettControl;
 
 namespace Angrand.PalettApp {
   public partial class WinFormAngrand : Form {

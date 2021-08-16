@@ -1,10 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using Palett.Types;
 
 namespace Angrand.GUI.PalettControl {
   public partial class PalettControl : UserControl {

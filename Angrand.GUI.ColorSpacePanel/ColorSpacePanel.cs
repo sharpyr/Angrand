@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Palett.Convert;
 using Veho;
-using Veho.Vector;
 
 namespace Angrand.GUI.ColorSpacePanel {
   public partial class ColorSpacePanel : UserControl {
