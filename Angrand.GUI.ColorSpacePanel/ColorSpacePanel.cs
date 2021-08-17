@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Palett.Convert;
+using Palett;
 using Veho;
 
 namespace Angrand.GUI.ColorSpacePanel {
