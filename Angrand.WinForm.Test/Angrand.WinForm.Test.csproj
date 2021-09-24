@@ -100,10 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
-      <Version>0.2.11</Version>
+      <Version>0.2.16</Version>
     </PackageReference>
     <PackageReference Include="Spare.Logger">
-      <Version>0.1.23</Version>
+      <Version>0.1.25</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
