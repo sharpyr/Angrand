@@ -19,7 +19,8 @@ namespace Angrand.GUI.ColorSpacePanel {
         this.RgbEnabled = false;
         this.SetRgbSelection(value);
         this.Enabled = !value.IsEmpty;
-        if (this.HslEnabled) { this.Hsl = value.ColorToHsl(); } else { this.OnColorChanged?.Invoke(value); }
+        if (this.HslEnabled) { this.Hsl = value.ColorToHsl(); }
+        else { this.OnColorChanged?.Invoke(value); }
         this.RgbEnabled = true;
       }
     }
@@ -31,7 +32,8 @@ namespace Angrand.GUI.ColorSpacePanel {
         this.HslEnabled = false;
         this.SetHslSelection(value);
         var color = value.HslToColor();
-        if (this.RgbEnabled) { this.Rgb = color; } else { this.OnColorChanged?.Invoke(color); }
+        if (this.RgbEnabled) { this.Rgb = color; }
+        else { this.OnColorChanged?.Invoke(color); }
         this.HslEnabled = true;
       }
     }
@@ -39,11 +41,11 @@ namespace Angrand.GUI.ColorSpacePanel {
     public ColorSpacePanel() {
       InitializeComponent();
       object[] indexes;
-      this.comboBoxR.Items.AddRange(indexes = Vec.Init(256, x => (object) x));
+      this.comboBoxR.Items.AddRange(indexes = Vec.Init(256, x => (object)x));
       this.comboBoxG.Items.AddRange(indexes); // indexes = Enumerable.Range(0, 256).Select(x => (object) x).ToArray();
       this.comboBoxB.Items.AddRange(indexes);
-      this.comboBoxH.Items.AddRange(indexes = Vec.Init(361, x => (object) x));
-      this.comboBoxS.Items.AddRange(indexes = Vec.Init(101, x => (object) x));
+      this.comboBoxH.Items.AddRange(indexes = Vec.Init(361, x => (object)x));
+      this.comboBoxS.Items.AddRange(indexes = Vec.Init(101, x => (object)x));
       this.comboBoxL.Items.AddRange(indexes);
       this.Rgb = Color.Gainsboro;
     }
@@ -53,9 +55,9 @@ namespace Angrand.GUI.ColorSpacePanel {
       this.comboBoxB.SelectedIndex = color.B;
     }
     private void SetHslSelection((float h, float s, float l) hsl) {
-      this.comboBoxH.SelectedIndex = (int) hsl.h;
-      this.comboBoxS.SelectedIndex = (int) hsl.s;
-      this.comboBoxL.SelectedIndex = (int) hsl.l;
+      this.comboBoxH.SelectedIndex = (int)hsl.h;
+      this.comboBoxS.SelectedIndex = (int)hsl.s;
+      this.comboBoxL.SelectedIndex = (int)hsl.l;
     }
     private void RgbSelectedIndexChanged(object sender, EventArgs e) {
       if (!this.RgbEnabled) return;
