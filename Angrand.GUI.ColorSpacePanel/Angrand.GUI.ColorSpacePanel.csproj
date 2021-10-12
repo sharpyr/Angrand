@@ -2,26 +2,44 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <PackageVersion>0.1.1</PackageVersion>
+    <PackageVersion>0.1.2</PackageVersion>
     <Title>Angrand.GUI.ColorSpacePanel</Title>
     <Description>User control ColorSpacePanel</Description>
     <Authors>Hoyeung Wong</Authors>
     <Company>Hoyeung Wong</Company>
     <Copyright>Hoyeung Wong (c) 2020-present</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>0.1.1</AssemblyVersion>
-    <FileVersion>0.1.1</FileVersion>
+    <AssemblyVersion>0.1.2</AssemblyVersion>
+    <FileVersion>0.1.2</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms"/>
+    <Reference Include="Veho.Matrix">
+      <HintPath>..\..\..\..\.nuget\packages\veho.matrix\0.5.10\lib\netstandard2.0\Veho.Matrix.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
-      <Version>0.4.2</Version>
+      <Version>0.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Palett.Munsell">
+      <Version>0.4.3</Version>
     </PackageReference>
     <PackageReference Include="Veho.Vector">
-      <Version>0.5.9</Version>
+      <Version>0.5.10</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ScrollableNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ScrollableColorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MatrixPanel.cs"/>
   </ItemGroup>
 </Project>
