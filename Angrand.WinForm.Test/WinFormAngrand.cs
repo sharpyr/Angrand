@@ -14,6 +14,7 @@ namespace Angrand.PalettApp {
     private void WinFormAngrand_Load(object sender, EventArgs e) {
       presetPalettControl.OnLeftUpdated += this.OnLeftUpdated;
       presetPalettControl.OnRightUpdated += this.OnRightUpdated;
+      presetMatrixControl.Preset = (Color.Coral, Color.Goldenrod);
     }
 
     private void presetPalettControl_Load(object sender, EventArgs e) {
