@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatrixPalettControl));
             this.tableLayoutPanelMatrixPalettControl = new System.Windows.Forms.TableLayoutPanel();
             this.vScrollBar = new System.Windows.Forms.VScrollBar();
             this.buttonBlock = new System.Windows.Forms.Button();
+            this.colorSpacePanel = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
             this.buttonDone = new System.Windows.Forms.Button();
             this.cardMatrix = new Angrand.GUI.CardCollection.CardMatrix();
-            this.colorSpacePanel = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
             this.tableLayoutPanelMatrixPalettControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +84,18 @@
             this.buttonBlock.TabIndex = 6;
             this.buttonBlock.UseVisualStyleBackColor = true;
             // 
+            // colorSpacePanel
+            // 
+            this.colorSpacePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.colorSpacePanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorSpacePanel.ForeColor = System.Drawing.Color.Gray;
+            this.colorSpacePanel.Location = new System.Drawing.Point(0, 0);
+            this.colorSpacePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.colorSpacePanel.MinimumSize = new System.Drawing.Size(0, 120);
+            this.colorSpacePanel.Name = "colorSpacePanel";
+            this.colorSpacePanel.Size = new System.Drawing.Size(84, 145);
+            this.colorSpacePanel.TabIndex = 2;
+            // 
             // buttonDone
             // 
             this.tableLayoutPanelMatrixPalettControl.SetColumnSpan(this.buttonDone, 3);
@@ -112,19 +123,6 @@
             this.cardMatrix.Name = "cardMatrix";
             this.cardMatrix.Size = new System.Drawing.Size(112, 147);
             this.cardMatrix.TabIndex = 9;
-            // 
-            // colorSpacePanel
-            // 
-            this.colorSpacePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSpacePanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorSpacePanel.ForeColor = System.Drawing.Color.Gray;
-            this.colorSpacePanel.Location = new System.Drawing.Point(0, 0);
-            this.colorSpacePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.colorSpacePanel.MinimumSize = new System.Drawing.Size(0, 120);
-            this.colorSpacePanel.Name = "colorSpacePanel";
-            this.colorSpacePanel.Rgb = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(204)))), ((int)(((byte)(211)))));
-            this.colorSpacePanel.Size = new System.Drawing.Size(84, 145);
-            this.colorSpacePanel.TabIndex = 2;
             // 
             // MatrixPalettControl
             // 
