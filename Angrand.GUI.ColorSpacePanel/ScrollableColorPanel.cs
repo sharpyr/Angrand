@@ -8,6 +8,10 @@ namespace Angrand.GUI.ColorSpacePanel {
   public partial class ScrollableColorPanel : UserControl {
     private bool locked = false;
     public event Action<Color> OnColorChanged;
+    public event MouseEventHandler OnTextBoxMouseDown {
+      add => this.textBox.MouseDown += value;
+      remove => this.textBox.MouseDown -= value;
+    }
 
     public ScrollableColorPanel() {
       InitializeComponent();
@@ -69,6 +73,7 @@ namespace Angrand.GUI.ColorSpacePanel {
     private void PaintTextBox(Color color) {
       this.textBox.BackColor = color;
       this.textBox.ForeColor = color.Reverse();
+      this.OnColorChanged?.Invoke(this.Rgb);
     }
     private void rgb_ValueChanged(int value) {
       if (this.locked) return;
@@ -76,9 +81,8 @@ namespace Angrand.GUI.ColorSpacePanel {
       var color = this.Rgb;
       this.Hsl = color.ColorToHsl();
       this.Hex = color.ColorToHex();
-      this.locked = false;
       this.PaintTextBox(color);
-      this.OnColorChanged?.Invoke(color);
+      this.locked = false;
     }
     private void hsl_ValueChanged(int value) {
       if (this.locked) return;
@@ -86,9 +90,8 @@ namespace Angrand.GUI.ColorSpacePanel {
       var hsl = this.Hsl;
       var color = this.Rgb = hsl.HslToColor();
       this.Hex = color.ColorToHex();
-      this.locked = false;
       this.PaintTextBox(color);
-      this.OnColorChanged?.Invoke(color);
+      this.locked = false;
     }
     private void hex_ValueChanged(object sender, EventArgs e) {
       if (this.locked) return;
@@ -96,9 +99,8 @@ namespace Angrand.GUI.ColorSpacePanel {
       var hex = this.Hex;
       var color = this.Rgb = Conv.HexToColor(hex);
       this.Hsl = color.ColorToHsl();
-      this.locked = false;
       this.PaintTextBox(color);
-      this.OnColorChanged?.Invoke(color);
+      this.locked = false;
     }
 
     private void textBox_KeyPress(object sender, KeyEventArgs e) {
@@ -108,7 +110,7 @@ namespace Angrand.GUI.ColorSpacePanel {
     }
 
     private void control_DragEnter(object sender, DragEventArgs e) {
-      e.Effect = e.Data.GetDataPresent("System.Drawing.Color")
+      e.Effect = e.Data.GetDataPresent(typeof(System.Drawing.Color))
         ? DragDropEffects.Copy
         : DragDropEffects.None;
     }
