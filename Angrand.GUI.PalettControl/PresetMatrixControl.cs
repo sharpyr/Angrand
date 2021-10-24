@@ -6,16 +6,30 @@ using Palett;
 
 namespace Angrand.GUI.PalettControl {
   public partial class PresetMatrixControl : UserControl {
+    public event EventHandler OnDoneClicked {
+      add => this.buttonDone.Click += value;
+      remove => this.buttonDone.Click -= value;
+    }
+    public event Action<Color> OnLeftColorChanged {
+      add => this.colorPanelLeft.OnColorChanged += value;
+      remove => this.colorPanelLeft.OnColorChanged -= value;
+    }
+    public event Action<Color> OnRightColorChanged {
+      add => this.colorPanelRight.OnColorChanged += value;
+      remove => this.colorPanelRight.OnColorChanged -= value;
+    }
     public PresetMatrixControl() {
       InitializeComponent();
-      this.buttonDone.DragEnter += button_DragEnter;
-      this.buttonDone.DragDrop += button_DragDrop;
       this.matrixPanel.SaturationThreshold = 75;
       this.matrixPanel.LightnessMinimum = 0;
       this.matrixPanel.HueThreshold = 120;
       this.matrixPanel.HueRange = 180;
       this.matrixPanel.OnMouseMoved += this.button_OnMouseMove;
       this.matrixPanel.OnMouseLeft += this.button_OnMouseLeave;
+      this.colorPanelLeft.OnTextBoxMouseDown += this.colorPanel_MouseDown;
+      this.colorPanelRight.OnTextBoxMouseDown += this.colorPanel_MouseDown;
+      this.buttonDone.DragEnter += this.button_DragEnter;
+      this.buttonDone.DragDrop += this.button_DragDrop;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -24,32 +38,32 @@ namespace Angrand.GUI.PalettControl {
       get => (this.colorPanelLeft.Rgb, this.colorPanelRight.Rgb);
       set => (this.colorPanelLeft.Rgb, this.colorPanelRight.Rgb) = value;
     }
-    public event Action OnDoneClicked;
 
-    private void buttonDone_Click(object sender, EventArgs e) {
-      this.OnDoneClicked?.Invoke();
+    private void button_OnMouseMove(object sender, MouseEventArgs e) {
+      var button = (Button)sender;
+      if (button.Name.StartsWith("button")) return;
+      this.buttonDone.Text = button.Name;
+      this.buttonDone.BackColor = button.BackColor;
+      this.buttonDone.ForeColor = button.BackColor.Reverse();
     }
-
-    private void button_OnMouseMove(Button sender) {
-      if (sender.Name.StartsWith("button")) return;
-      this.buttonDone.Text = sender.Name;
-      this.buttonDone.BackColor = sender.BackColor;
-      this.buttonDone.ForeColor = sender.BackColor.Reverse();
-    }
-    private void button_OnMouseLeave(Button sender) {
+    private void button_OnMouseLeave(object sender, EventArgs e) {
       this.buttonDone.Text = "Done";
       this.buttonDone.BackColor = Color.WhiteSmoke;
       this.buttonDone.ForeColor = Color.Gray;
     }
 
     private void button_DragEnter(object sender, DragEventArgs e) {
-      if (e.Data.GetDataPresent("System.Drawing.Color"))
-        e.Effect = DragDropEffects.Copy;
-      else
-        e.Effect = DragDropEffects.None;
+      e.Effect = e.Data.GetDataPresent(typeof(Color))
+        ? DragDropEffects.Copy
+        : DragDropEffects.None;
     }
     private void button_DragDrop(object sender, DragEventArgs e) {
       ((Control)sender).BackColor = (Color)e.Data.GetData(typeof(Color));
+    }
+
+    private void colorPanel_MouseDown(object sender, MouseEventArgs e) {
+      Console.WriteLine($">> [{((Control)sender).Name}] {0}");
+      this.DoDragDrop(this.Preset, DragDropEffects.Copy | DragDropEffects.Move);
     }
   }
 }
