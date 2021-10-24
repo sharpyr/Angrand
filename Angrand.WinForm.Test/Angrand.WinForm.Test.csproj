@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Palett.Convert">
-      <Version>0.4.3</Version>
+      <Version>0.4.4</Version>
     </PackageReference>
     <PackageReference Include="Spare.Logger">
       <Version>0.2.2</Version>

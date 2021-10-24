@@ -15,6 +15,12 @@ namespace Angrand.PalettApp {
       presetPalettControl.OnLeftUpdated += this.OnLeftUpdated;
       presetPalettControl.OnRightUpdated += this.OnRightUpdated;
       presetMatrixControl.Preset = (Color.Coral, Color.Goldenrod);
+      presetMatrixControl.OnDoneClicked += this.OnDoneClicked;
+      // splitPalett.Count = 20;
+      splitPalett.OnDoneClicked += this.OnDoneClicked;
+      splitPalett.Preset = (Color.Coral, Color.Goldenrod);
+      splitPalett.OnLeftColorChanged += this.OnLeftUpdated;
+      splitPalett.OnRightColorChanged += this.OnRightUpdated;
     }
 
     private void presetPalettControl_Load(object sender, EventArgs e) {
@@ -27,6 +33,10 @@ namespace Angrand.PalettApp {
     }
     private void OnRightUpdated(Color color) {
       Console.WriteLine($"Right Color: {color}");
+    }
+
+    private void OnDoneClicked(object sender, EventArgs e) {
+      this.Close();
     }
 
     private void buttonSetEmpty_Click(object sender, EventArgs e) {
