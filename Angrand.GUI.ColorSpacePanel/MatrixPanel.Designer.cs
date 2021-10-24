@@ -100,7 +100,6 @@ namespace Angrand.GUI.ColorSpacePanel {
             // 
             // cardMatrice
             // 
-            this.cardMatrice.CardColor = System.Drawing.Color.Empty;
             this.cardMatrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardMatrice.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.cardMatrice.Location = new System.Drawing.Point(25, 1);
@@ -111,11 +110,10 @@ namespace Angrand.GUI.ColorSpacePanel {
             // 
             // MatrixPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "MatrixPanel";
             this.Size = new System.Drawing.Size(230, 220);
             this.tableLayoutPanel.ResumeLayout(false);
