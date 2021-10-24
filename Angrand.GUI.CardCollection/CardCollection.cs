@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Angrand.GUI.CardCollection {
   public partial class CardCollection : UserControl {
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
     public Color CardColor { get; set; }
 
     public CardCollection() {
