@@ -36,9 +36,9 @@ namespace Angrand.GUI.ColorSpacePanel {
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 3;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Controls.Add(this.hScrollBar, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.numericUpDown, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.label, 0, 0);
@@ -55,11 +55,11 @@ namespace Angrand.GUI.ColorSpacePanel {
             // 
             this.hScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hScrollBar.Location = new System.Drawing.Point(73, 1);
+            this.hScrollBar.Location = new System.Drawing.Point(81, 1);
             this.hScrollBar.Margin = new System.Windows.Forms.Padding(1);
             this.hScrollBar.Maximum = 255;
             this.hScrollBar.Name = "hScrollBar";
-            this.hScrollBar.Size = new System.Drawing.Size(54, 23);
+            this.hScrollBar.Size = new System.Drawing.Size(46, 23);
             this.hScrollBar.TabIndex = 4;
             this.hScrollBar.Value = 255;
             this.hScrollBar.ValueChanged += new System.EventHandler(this.hScrollBar_ValueChanged);
@@ -69,7 +69,7 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.numericUpDown.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.numericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown.Location = new System.Drawing.Point(19, 1);
+            this.numericUpDown.Location = new System.Drawing.Point(27, 1);
             this.numericUpDown.Margin = new System.Windows.Forms.Padding(1);
             this.numericUpDown.Maximum = new decimal(new int[] {
             255,
@@ -77,7 +77,7 @@ namespace Angrand.GUI.ColorSpacePanel {
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(52, 23);
+            this.numericUpDown.Size = new System.Drawing.Size(52, 25);
             this.numericUpDown.TabIndex = 3;
             this.numericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown.Value = new decimal(new int[] {
@@ -91,12 +91,12 @@ namespace Angrand.GUI.ColorSpacePanel {
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label.Location = new System.Drawing.Point(2, 2);
-            this.label.Margin = new System.Windows.Forms.Padding(2);
+            this.label.Location = new System.Drawing.Point(1, 1);
+            this.label.Margin = new System.Windows.Forms.Padding(1);
+            this.label.MinimumSize = new System.Drawing.Size(24, 0);
             this.label.Name = "label";
-            this.label.Padding = new System.Windows.Forms.Padding(2);
-            this.label.Size = new System.Drawing.Size(14, 21);
+            this.label.Padding = new System.Windows.Forms.Padding(1);
+            this.label.Size = new System.Drawing.Size(24, 23);
             this.label.TabIndex = 1;
             this.label.Text = "X";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +106,6 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.Controls.Add(this.tableLayoutPanel);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ScrollableNumber";
             this.Size = new System.Drawing.Size(128, 25);

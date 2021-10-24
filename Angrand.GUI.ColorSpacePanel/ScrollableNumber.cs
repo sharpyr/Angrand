@@ -16,8 +16,7 @@ namespace Angrand.GUI.ColorSpacePanel {
       get => (this.hScrollBar.Minimum, this.hScrollBar.Maximum);
       set {
         int min, max;
-        if (value.min <= value.max) { (min, max) = value; }
-        else { (max, min) = value; }
+        if (value.min <= value.max) { (min, max) = value; } else { (max, min) = value; }
         this.hScrollBar.Minimum = min;
         this.hScrollBar.Maximum = max;
         this.numericUpDown.Minimum = min;
@@ -35,14 +34,13 @@ namespace Angrand.GUI.ColorSpacePanel {
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public int numericValue {
-      get => (int)this.numericUpDown.Value;
+      get => (int) this.numericUpDown.Value;
       set {
         this.numericEnabled = false;
-        if (value < this.numericUpDown.Minimum) value = (int)this.numericUpDown.Minimum;
-        if (value > this.numericUpDown.Maximum) value = (int)this.numericUpDown.Maximum;
+        if (value < this.numericUpDown.Minimum) value = (int) this.numericUpDown.Minimum;
+        if (value > this.numericUpDown.Maximum) value = (int) this.numericUpDown.Maximum;
         this.numericUpDown.Value = value;
-        if (this.scrollEnabled) { this.hScrollBar.Value = value; }
-        else { this.OnValueChanged?.Invoke(value); }
+        if (this.scrollEnabled) { this.hScrollBar.Value = value; } else { this.OnValueChanged?.Invoke(value); }
         this.numericEnabled = true;
       }
     }
@@ -55,8 +53,7 @@ namespace Angrand.GUI.ColorSpacePanel {
         if (value < this.hScrollBar.Minimum) value = this.hScrollBar.Minimum;
         if (value > this.hScrollBar.Maximum) value = this.hScrollBar.Maximum;
         this.hScrollBar.Value = value;
-        if (this.numericEnabled) { this.numericUpDown.Value = value; }
-        else { this.OnValueChanged?.Invoke(value); }
+        if (this.numericEnabled) { this.numericUpDown.Value = value; } else { this.OnValueChanged?.Invoke(value); }
         this.scrollEnabled = true;
       }
     }
