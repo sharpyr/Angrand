@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Palett;
-using Palett.Projector;
 using Veho;
 using Veho.Sequence;
+using PalettPreset = Palett.Types.Preset;
 using ColorPair = System.ValueTuple<System.Drawing.Color, System.Drawing.Color>;
 
 namespace Angrand.GUI.CardCollection {
@@ -51,7 +51,7 @@ namespace Angrand.GUI.CardCollection {
       get => (this.LabelLeft.BackColor, this.LabelRight.BackColor);
       set {
         var (min, max) = value;
-        var preset = Palett.Types.Preset.Build(min.ColorToHex(), max.ColorToHex());
+        var preset = PalettPreset.Build(min.ColorToHex(), max.ColorToHex());
         var projector = ProjectorFactory.Build((0, this.Count - 1), preset);
         var colorCollection = Vec.Init(this.Count, i => projector.Project(i).HslToColor());
         labelCollection.IterZip(colorCollection, (label, color) => label.BackColor = color);
@@ -70,9 +70,7 @@ namespace Angrand.GUI.CardCollection {
     }
 
     private void CardPreset_DragEnter(object sender, DragEventArgs e) {
-      e.Effect = e.Data.GetDataPresent(typeof(ColorPair))
-        ? DragDropEffects.Copy
-        : DragDropEffects.None;
+      e.Effect = e.Data.GetDataPresent(typeof(ColorPair)) ? DragDropEffects.Copy : DragDropEffects.None;
     }
 
     private void CardPreset_DragDrop(object sender, DragEventArgs e) {
