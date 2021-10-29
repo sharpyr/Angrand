@@ -1,115 +1,105 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Angrand.GUI.CardCollection;
-using Veho.Vector;
-using static System.Math;
-using ColorPair = System.ValueTuple<System.Drawing.Color, System.Drawing.Color>;
+using Palett;
+using Palett.Types;
+using Veho;
+using Veho.Matrix;
 
 namespace Angrand.GUI.PalettControl {
   public partial class SplitPalett : UserControl {
+    private Button[,] matrix;
     public event EventHandler OnDoneClicked {
-      add => presetMatrixControl.OnDoneClicked += value;
-      remove => presetMatrixControl.OnDoneClicked -= value;
+      add => buttonDone.Click += value;
+      remove => buttonDone.Click -= value;
     }
-    public event Action<Color> OnLeftColorChanged {
-      add => this.presetMatrixControl.OnLeftColorChanged += value;
-      remove => this.presetMatrixControl.OnLeftColorChanged -= value;
-    }
-    public event Action<Color> OnRightColorChanged {
-      add => this.presetMatrixControl.OnRightColorChanged += value;
-      remove => this.presetMatrixControl.OnRightColorChanged -= value;
+    public event Action<Color> OnColorChanged {
+      add => colorPanel.OnColorChanged += value;
+      remove => colorPanel.OnColorChanged -= value;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
-    public List<CardPreset> CardPresetCollection = new List<CardPreset>();
-    
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    [Browsable(false)]
-    public ColorPair Preset {
-      get => this.presetMatrixControl.Preset;
-      set => this.presetMatrixControl.Preset = value;
+    public Color Color {
+      get => this.colorPanel.Rgb;
+      set => this.colorPanel.Rgb = value;
     }
 
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    [Browsable(false)]
-    public ColorPair[] PresetCollection {
-      get => CardPresetCollection.Map(x => x.Preset);
-      set {
-        for (int i = 0, hi = Min(CardPresetCollection.Count, value.Length); i < hi; i++)
-          CardPresetCollection[i].Preset = value[i];
-      }
-    }
-    
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    [Browsable(false)]
-    public int Count {
-      get => this.tableLayoutPanel.RowCount - 1;
-      set {
-        this.splitContainer.SuspendLayout();
-        this.tableLayoutPanel.SuspendLayout();
-        this.SuspendLayout();
-
-        this.tableLayoutPanel.RowCount = value + 1;
-        var unitPercent = 100F / Count;
-        this.tableLayoutPanel.RowStyles.Clear();
-        this.tableLayoutPanel.Controls.Clear();
-        for (var i = 0; i < value; i++) {
-          this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, unitPercent));
-        }
-        this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-
-        this.CardPresetCollection.Clear();
-        this.CardPresetCollection.Capacity = value;
-        for (var i = 0; i < value; i++) {
-          var cardPreset = new CardPreset {
-                                            AllowDrop = true,
-                                            AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                                            Dock = DockStyle.Fill,
-                                            // Margin = new Padding(0),
-                                            Size = new Size(64, 16),
-                                            Name = "cardPreset_" + i,
-                                            TabIndex = i,
-                                          };
-          cardPreset.OnLabelDoubleClicked += this.cardPreset_DoubleClicked;
-          this.CardPresetCollection.Add(cardPreset);
-          this.tableLayoutPanel.Controls.Add(cardPreset, 0, i);
-        }
-        this.splitContainer.ResumeLayout(false);
-        this.tableLayoutPanel.ResumeLayout(false);
-        this.ResumeLayout(false);
-      }
-    }
     public SplitPalett() {
       InitializeComponent();
-      this.presetMatrixControl.DragDrop += this.presetMatrixControl_DragDrop;
-      this.presetMatrixControl.DragEnter += this.presetMatrixControl_DragEnter;
-      // this.presetMatrixControl.MouseDown += this.presetMatrixControl_MouseDown;
-      if (this.Count <= 0) this.Count = 20;
+      this.MatrixSize = (12, 5);
+      colorPanel.OnTextBoxMouseDown += this.button_MouseDown;
+      scrollablePixelMatrix.OnDoubleClicked += this.button_DoubleClicked;
+      scrollablePixelMatrix.InitializeParameters(0, 75, 120, 180, true);
     }
 
-
-    private void cardPreset_DoubleClicked(object sender, EventArgs e) {
-      var cardPreset = (CardPreset)sender;
-      this.presetMatrixControl.Preset = cardPreset.Preset;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
+    public (int h, int w) MatrixSize {
+      get => this.matrix.Size();
+      set => this.InitializeButtons(value.h, value.w);
     }
 
-    // private void presetMatrixControl_MouseDown(object sender, MouseEventArgs e) {
-    //   this.presetMatrixControl.DoDragDrop(this.presetMatrixControl.Preset, DragDropEffects.Copy | DragDropEffects.Move);
-    // }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
+    public Button this[int x, int y] => matrix[x, y];
 
-    private void presetMatrixControl_DragEnter(object sender, DragEventArgs e) {
-      e.Effect = e.Data.GetDataPresent(typeof(ColorPair))
-        ? DragDropEffects.Copy
-        : DragDropEffects.None;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
+    public Color[,] ColorMatrix {
+      get => matrix.Map(button => button.BackColor);
+      set => matrix.IterZip(value, (button, color) => button.BackColor = color);
     }
 
-    private void presetMatrixControl_DragDrop(object sender, DragEventArgs e) {
-      var control = (PresetMatrixControl)sender;
-      control.Preset = (ColorPair)e.Data.GetData(typeof(ColorPair));
+    public void InitializeButtons(int h, int w) {
+      pixelHolder.SuspendLayout();
+      SuspendLayout();
+      pixelHolder.InitGrid(h, w);
+      var gradientCrostab = Munsell.GradientCrostab(((0, 50, 95), (240, 60, 15)), HSLAttr.L, HSLAttr.H, h, w);
+      this.matrix = (h, w).Init((i, j) => {
+        var button = ButtonUtil.MakePixelButton();
+        button.BackColor = gradientCrostab[i, j].HslToColor();
+        button.Name = $"button_{i:00}_{j:00}";
+        button.Text = "";
+        button.TabIndex = i * w + j;
+        button.MouseDown += button_MouseDown;
+        button.DragEnter += button_DragEnter;
+        button.DragDrop += button_DragDrop;
+        return button;
+      });
+      this.pixelHolder.AssignControls(this.matrix);
+      pixelHolder.ResumeLayout(false);
+      ResumeLayout(false);
+    }
+
+    private void button_DoubleClicked(object sender, EventArgs e) {
+      var button = (Control)sender;
+      // Console.WriteLine($">> [double clicked] {button.BackColor}");
+      this.colorPanel.Rgb = button.BackColor;
+    }
+
+    private void button_MouseDown(object sender, MouseEventArgs e) {
+      if (e.Button != MouseButtons.Left) return;
+      switch (e.Clicks) {
+        case 1: {
+          DoDragDrop(((Control)sender)?.BackColor ?? Color.Transparent, DragDropEffects.Copy | DragDropEffects.Move);
+          return;
+        }
+        case 2:
+          this.button_DoubleClicked(sender, e);
+          return;
+      }
+    }
+
+    private void button_DragEnter(object sender, DragEventArgs e) {
+      e.Effect = e.Data.GetDataPresent(typeof(Color)) ? DragDropEffects.Copy : DragDropEffects.None;
+    }
+
+    private void button_DragDrop(object sender, DragEventArgs e) {
+      var button = (Button)sender;
+      button.BackColor = (Color)e.Data.GetData(typeof(Color));
     }
   }
 }
