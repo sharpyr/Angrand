@@ -13,63 +13,63 @@ namespace Angrand.GUI.ColorSpacePanel {
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public (int min, int max) Bound {
-      get => (this.hScrollBar.Minimum, this.hScrollBar.Maximum);
+      get => (hScrollBar.Minimum, hScrollBar.Maximum);
       set {
         int min, max;
         if (value.min <= value.max) { (min, max) = value; } else { (max, min) = value; }
-        this.hScrollBar.Minimum = min;
-        this.hScrollBar.Maximum = max;
-        this.numericUpDown.Minimum = min;
-        this.numericUpDown.Maximum = max;
+        hScrollBar.Minimum = min;
+        hScrollBar.Maximum = max;
+        numericUpDown.Minimum = min;
+        numericUpDown.Maximum = max;
       }
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public string Label {
-      get => this.label.Text;
-      set => this.label.Text = value;
+      get => label.Text;
+      set => label.Text = value;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public int numericValue {
-      get => (int) this.numericUpDown.Value;
+      get => (int) numericUpDown.Value;
       set {
-        this.numericEnabled = false;
-        if (value < this.numericUpDown.Minimum) value = (int) this.numericUpDown.Minimum;
-        if (value > this.numericUpDown.Maximum) value = (int) this.numericUpDown.Maximum;
-        this.numericUpDown.Value = value;
-        if (this.scrollEnabled) { this.hScrollBar.Value = value; } else { this.OnValueChanged?.Invoke(value); }
-        this.numericEnabled = true;
+        numericEnabled = false;
+        if (value < numericUpDown.Minimum) value = (int) numericUpDown.Minimum;
+        if (value > numericUpDown.Maximum) value = (int) numericUpDown.Maximum;
+        numericUpDown.Value = value;
+        if (scrollEnabled) { hScrollBar.Value = value; } else { OnValueChanged?.Invoke(value); }
+        numericEnabled = true;
       }
     }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public int scrollValue {
-      get => this.hScrollBar.Value;
+      get => hScrollBar.Value;
       set {
-        this.scrollEnabled = false;
-        if (value < this.hScrollBar.Minimum) value = this.hScrollBar.Minimum;
-        if (value > this.hScrollBar.Maximum) value = this.hScrollBar.Maximum;
-        this.hScrollBar.Value = value;
-        if (this.numericEnabled) { this.numericUpDown.Value = value; } else { this.OnValueChanged?.Invoke(value); }
-        this.scrollEnabled = true;
+        scrollEnabled = false;
+        if (value < hScrollBar.Minimum) value = hScrollBar.Minimum;
+        if (value > hScrollBar.Maximum) value = hScrollBar.Maximum;
+        hScrollBar.Value = value;
+        if (numericEnabled) { numericUpDown.Value = value; } else { OnValueChanged?.Invoke(value); }
+        scrollEnabled = true;
       }
     }
 
     private void numericUpDown_ValueChanged(object sender, EventArgs e) {
-      if (!this.numericEnabled) return;
-      this.numericEnabled = false;
-      this.scrollValue = this.numericValue;
-      this.numericEnabled = true;
+      if (!numericEnabled) return;
+      numericEnabled = false;
+      scrollValue = numericValue;
+      numericEnabled = true;
     }
 
     private void hScrollBar_ValueChanged(object sender, EventArgs e) {
-      if (!this.scrollEnabled) return;
-      this.scrollEnabled = false;
-      this.numericValue = this.scrollValue;
-      this.scrollEnabled = true;
+      if (!scrollEnabled) return;
+      scrollEnabled = false;
+      numericValue = scrollValue;
+      scrollEnabled = true;
     }
   }
 }

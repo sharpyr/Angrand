@@ -91,6 +91,7 @@ namespace Angrand.GUI.ColorSpacePanel {
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label.Location = new System.Drawing.Point(1, 1);
             this.label.Margin = new System.Windows.Forms.Padding(1);
             this.label.MinimumSize = new System.Drawing.Size(24, 0);

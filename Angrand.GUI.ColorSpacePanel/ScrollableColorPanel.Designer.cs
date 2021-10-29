@@ -26,13 +26,13 @@ namespace Angrand.GUI.ColorSpacePanel {
     /// </summary>
     private void InitializeComponent() {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox = new System.Windows.Forms.TextBox();
             this.scrollableL = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
             this.scrollableS = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
             this.scrollableH = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
             this.scrollableB = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
             this.scrollableG = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
             this.scrollableR = new Angrand.GUI.ColorSpacePanel.ScrollableNumber();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,21 +64,6 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.Size = new System.Drawing.Size(130, 174);
             this.tableLayoutPanel.TabIndex = 0;
-            // 
-            // textBox
-            // 
-            this.textBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox.Location = new System.Drawing.Point(0, 148);
-            this.textBox.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.textBox.Name = "textBox";
-            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox.Size = new System.Drawing.Size(130, 25);
-            this.textBox.TabIndex = 6;
-            this.textBox.Text = "#FFFFFF";
-            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // scrollableL
             // 
@@ -151,6 +136,21 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.scrollableR.Name = "scrollableR";
             this.scrollableR.Size = new System.Drawing.Size(128, 22);
             this.scrollableR.TabIndex = 0;
+            // 
+            // textBox
+            // 
+            this.textBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox.Location = new System.Drawing.Point(0, 148);
+            this.textBox.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.textBox.Name = "textBox";
+            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox.Size = new System.Drawing.Size(130, 25);
+            this.textBox.TabIndex = 6;
+            this.textBox.Text = "#FFFFFF";
+            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScrollableColorPanel
             // 
