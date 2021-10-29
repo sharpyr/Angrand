@@ -3,40 +3,40 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Angrand.GUI.PalettControl {
+namespace Angrand.GUI.PresetQueue {
   public partial class MatrixPalettControl : UserControl {
     public MatrixPalettControl() {
       InitializeComponent();
-      this.cardMatrix.OnClicked += OnCardMatrixClicked;
-      this.colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
+      cardMatrix.OnClicked += OnCardMatrixClicked;
+      colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
       // this.Color = Color.FromArgb(0, 204, 204);
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public Color Color {
-      get => this.colorSpacePanel.Rgb;
-      set => this.colorSpacePanel.Rgb = value;
+      get => colorSpacePanel.Rgb;
+      set => colorSpacePanel.Rgb = value;
     }
     public event Action OnDoneClicked;
     private void OnButtonDone_Click(object sender, EventArgs e) => OnDoneClicked?.Invoke();
     public void OnCardMatrixClicked(Color color) {
-      this.colorSpacePanel.Rgb = color;
+      colorSpacePanel.Rgb = color;
       var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBar.Value = l;
-      this.buttonBlock.LocalUpdate(l, color);
+      vScrollBar.Value = l;
+      buttonBlock.LocalUpdate(l, color);
     }
     private void vScrollBar_Scroll(object sender, ScrollEventArgs e) {
-      this.colorSpacePanel.OnColorChanged -= OnColorSpacePanelIndexChanged;
-      var hsl = this.colorSpacePanel.Hsl.UpdateLightness(this.vScrollBar.Value);
-      this.colorSpacePanel.Hsl = hsl;
-      this.colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
-      this.buttonBlock.LocalUpdate((int) hsl.l, this.colorSpacePanel.Rgb);
+      colorSpacePanel.OnColorChanged -= OnColorSpacePanelIndexChanged;
+      var hsl = colorSpacePanel.Hsl.UpdateLightness(vScrollBar.Value);
+      colorSpacePanel.Hsl = hsl;
+      colorSpacePanel.OnColorChanged += OnColorSpacePanelIndexChanged;
+      buttonBlock.LocalUpdate((int) hsl.l, colorSpacePanel.Rgb);
     }
     public void OnColorSpacePanelIndexChanged(Color color) {
       var l = (int) (color.GetBrightness() * 100);
-      this.vScrollBar.Value = l;
-      this.buttonBlock.LocalUpdate(l, color);
+      vScrollBar.Value = l;
+      buttonBlock.LocalUpdate(l, color);
     }
   }
 }

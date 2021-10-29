@@ -11,19 +11,19 @@ namespace Angrand.GUI.PresetQueue {
       InitializeComponent();
       // this.Presets = Utils.PresetCollection;
     }
-    public int Count => this.tableLayoutPanelPresetQueue.RowCount - 1;
+    public int Count => tableLayoutPanelPresetQueue.RowCount - 1;
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public (Color min, Color max)[] Presets {
-      get => Vec.Init(this.Count, this.GetColor);
-      set => value.Iterate(this.SetColor);
+      get => Vec.Init(Count, GetColor);
+      set => value.Iterate(SetColor);
     }
 
     public event Action<(Color min, Color max)> OnPresetClicked;
     public event Action<int> OnChevronClicked;
     public (Button left, Button right) this[int index] {
       get {
-        index %= this.Count;
+        index %= Count;
         var left = (Button) tableLayoutPanelPresetQueue.GetControlFromPosition(1, index);
         var right = (Button) tableLayoutPanelPresetQueue.GetControlFromPosition(2, index);
         return (left, right);
@@ -39,17 +39,17 @@ namespace Angrand.GUI.PresetQueue {
       right.BackColor = preset.max;
     }
     public void PushColor((Color min, Color max) preset) {
-      var hi = this.Count - 1;
-      for (var i = 0; i < hi;) this.SetColor(i, this.GetColor(++i));
-      this.SetColor(hi, preset);
+      var hi = Count - 1;
+      for (var i = 0; i < hi;) SetColor(i, GetColor(++i));
+      SetColor(hi, preset);
     }
     private void OnButtonPreset_Click(object sender, EventArgs e) {
       var index = tableLayoutPanelPresetQueue.GetRow((Control) sender);
-      this.OnPresetClicked?.Invoke(this.GetColor(index));
+      OnPresetClicked?.Invoke(GetColor(index));
     }
     private void OnButtonChevron_Click(object sender, EventArgs e) {
-      var index = this.tableLayoutPanelPresetQueue.GetRow((Control) sender);
-      this.OnChevronClicked?.Invoke(index);
+      var index = tableLayoutPanelPresetQueue.GetRow((Control) sender);
+      OnChevronClicked?.Invoke(index);
     }
   }
 }

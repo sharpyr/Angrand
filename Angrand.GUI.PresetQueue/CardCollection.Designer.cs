@@ -1,4 +1,4 @@
-﻿namespace Angrand.GUI.CardCollection
+﻿namespace Angrand.GUI.PresetQueue
 {
     partial class CardCollection
     {

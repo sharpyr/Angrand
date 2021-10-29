@@ -1,4 +1,4 @@
-﻿namespace Angrand.GUI.PalettControl
+﻿namespace Angrand.GUI.PresetQueue
 {
     partial class MatrixPalettControl
     {
@@ -31,9 +31,9 @@
             this.tableLayoutPanelMatrixPalettControl = new System.Windows.Forms.TableLayoutPanel();
             this.vScrollBar = new System.Windows.Forms.VScrollBar();
             this.buttonBlock = new System.Windows.Forms.Button();
-            this.colorSpacePanel = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
+            this.colorSpacePanel = new ColorSpacePanel();
             this.buttonDone = new System.Windows.Forms.Button();
-            this.cardMatrix = new Angrand.GUI.CardCollection.CardMatrix();
+            this.cardMatrix = new CardMatrix();
             this.tableLayoutPanelMatrixPalettControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,10 +143,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMatrixPalettControl;
-        private GUI.ColorSpacePanel.ColorSpacePanel colorSpacePanel;
+        private ColorSpacePanel colorSpacePanel;
         private System.Windows.Forms.VScrollBar vScrollBar;
         private System.Windows.Forms.Button buttonBlock;
         private System.Windows.Forms.Button buttonDone;
-        private CardCollection.CardMatrix cardMatrix;
+        private CardMatrix cardMatrix;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Angrand.GUI.PalettControl
+﻿namespace Angrand.GUI.PresetQueue
 {
     partial class PalettControl
     {
@@ -31,10 +31,10 @@
             this.tableLayoutPanelPalettControl = new System.Windows.Forms.TableLayoutPanel();
             this.vScrollBarRight = new System.Windows.Forms.VScrollBar();
             this.buttonBlockRight = new System.Windows.Forms.Button();
-            this.colorSpacePanelLeft = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
-            this.cardCollectionLeft = new Angrand.GUI.CardCollection.CardCollection();
-            this.colorSpacePanelRight = new Angrand.GUI.ColorSpacePanel.ColorSpacePanel();
-            this.cardCollectionRight = new Angrand.GUI.CardCollection.CardCollection();
+            this.colorSpacePanelLeft = new ColorSpacePanel();
+            this.cardCollectionLeft = new CardCollection();
+            this.colorSpacePanelRight = new ColorSpacePanel();
+            this.cardCollectionRight = new CardCollection();
             this.buttonBlockLeft = new System.Windows.Forms.Button();
             this.vScrollBarLeft = new System.Windows.Forms.VScrollBar();
             this.buttonDone = new System.Windows.Forms.Button();
@@ -196,10 +196,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPalettControl;
-        private GUI.ColorSpacePanel.ColorSpacePanel colorSpacePanelLeft;
-        private GUI.CardCollection.CardCollection cardCollectionLeft;
-        private GUI.ColorSpacePanel.ColorSpacePanel colorSpacePanelRight;
-        private GUI.CardCollection.CardCollection cardCollectionRight;
+        private ColorSpacePanel colorSpacePanelLeft;
+        private CardCollection cardCollectionLeft;
+        private ColorSpacePanel colorSpacePanelRight;
+        private CardCollection cardCollectionRight;
         private System.Windows.Forms.VScrollBar vScrollBarRight;
         private System.Windows.Forms.Button buttonBlockRight;
         private System.Windows.Forms.Button buttonBlockLeft;

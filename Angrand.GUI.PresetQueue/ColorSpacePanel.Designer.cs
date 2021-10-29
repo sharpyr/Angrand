@@ -1,4 +1,4 @@
-﻿namespace Angrand.GUI.ColorSpacePanel
+﻿namespace Angrand.GUI.PresetQueue
 {
     partial class ColorSpacePanel
     {

@@ -1,6 +1,7 @@
 ﻿
 using Angrand.GUI.ColorSpacePanel;
 using Angrand.GUI.PalettControl;
+using Angrand.GUI.PresetQueue;
 
 namespace Angrand.PalettApp
 {
@@ -32,89 +33,80 @@ namespace Angrand.PalettApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.splitPalett = new Angrand.GUI.PalettControl.SplitPalett();
-            this.presetMatrixControl = new Angrand.GUI.PalettControl.PresetMatrixControl();
-            this.presetPalettControl = new Angrand.GUI.PalettControl.PresetPalettControl();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.splitPreset = new Angrand.GUI.PalettControl.SplitPreset();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // splitContainer
             // 
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.splitPalett, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.presetMatrixControl, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.presetPalettControl, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1657, 697);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(10);
+            this.splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.splitPreset);
+            this.splitContainer.Panel1.Margin = new System.Windows.Forms.Padding(10);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.splitPalett);
+            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.splitContainer.Size = new System.Drawing.Size(1006, 697);
+            this.splitContainer.SplitterDistance = 335;
+            this.splitContainer.TabIndex = 7;
             // 
             // splitPalett
             // 
+            this.splitPalett.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.splitPalett.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitPalett.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.splitPalett.Location = new System.Drawing.Point(764, 20);
-            this.splitPalett.Margin = new System.Windows.Forms.Padding(10);
+            this.splitPalett.Location = new System.Drawing.Point(10, 10);
+            this.splitPalett.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.splitPalett.Name = "splitPalett";
-            this.splitPalett.Size = new System.Drawing.Size(873, 657);
-            this.splitPalett.TabIndex = 5;
+            this.splitPalett.Size = new System.Drawing.Size(647, 677);
+            this.splitPalett.TabIndex = 0;
             // 
-            // presetMatrixControl
+            // splitPreset
             // 
-            this.presetMatrixControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.presetMatrixControl.BackColor = System.Drawing.SystemColors.Control;
-            this.presetMatrixControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.presetMatrixControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presetMatrixControl.ForeColor = System.Drawing.Color.DarkGray;
-            this.presetMatrixControl.Location = new System.Drawing.Point(264, 20);
-            this.presetMatrixControl.Margin = new System.Windows.Forms.Padding(10);
-            this.presetMatrixControl.Name = "presetMatrixControl";
-            this.presetMatrixControl.Size = new System.Drawing.Size(480, 657);
-            this.presetMatrixControl.TabIndex = 4;
-            // 
-            // presetPalettControl
-            // 
-            this.presetPalettControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.presetPalettControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.presetPalettControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presetPalettControl.ForeColor = System.Drawing.Color.DarkGray;
-            this.presetPalettControl.Location = new System.Drawing.Point(20, 20);
-            this.presetPalettControl.Margin = new System.Windows.Forms.Padding(10);
-            this.presetPalettControl.Name = "presetPalettControl";
-            this.presetPalettControl.Size = new System.Drawing.Size(224, 657);
-            this.presetPalettControl.TabIndex = 1;
+            this.splitPreset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitPreset.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.splitPreset.Location = new System.Drawing.Point(0, 0);
+            this.splitPreset.Margin = new System.Windows.Forms.Padding(0);
+            this.splitPreset.Name = "splitPreset";
+            this.splitPreset.Padding = new System.Windows.Forms.Padding(10);
+            this.splitPreset.Size = new System.Drawing.Size(335, 697);
+            this.splitPreset.TabIndex = 8;
             // 
             // WinFormAngrand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1657, 697);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1006, 697);
+            this.Controls.Add(this.splitContainer);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "WinFormAngrand";
             this.Text = "Angrand";
             this.Load += new System.EventHandler(this.WinFormAngrand_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.SplitContainer splitContainer;
         private SplitPalett splitPalett;
-        private PresetMatrixControl presetMatrixControl;
-        private PresetPalettControl presetPalettControl;
+        private SplitPreset splitPreset;
     }
 }
 

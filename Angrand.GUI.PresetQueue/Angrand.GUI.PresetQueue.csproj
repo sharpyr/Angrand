@@ -2,15 +2,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <PackageVersion>0.1.14</PackageVersion>
+    <PackageVersion>0.1.20</PackageVersion>
     <Title>Angrand.GUI.PresetQueue</Title>
     <Description>User control PresetQueue</Description>
     <Authors>Hoyeung Wong</Authors>
     <Company>Hoyeung Wong</Company>
     <Copyright>Hoyeung Wong (c) 2020-present</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>0.1.14</AssemblyVersion>
-    <FileVersion>0.1.14</FileVersion>
+    <AssemblyVersion>0.1.20</AssemblyVersion>
+    <FileVersion>0.1.20</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
@@ -26,6 +26,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Update="PresetQueue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CardCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CardMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ColorSpacePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="PresetPalettControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MatrixPalettControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="PalettControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

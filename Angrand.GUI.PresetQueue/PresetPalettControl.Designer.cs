@@ -1,4 +1,4 @@
-﻿namespace Angrand.GUI.PalettControl
+﻿namespace Angrand.GUI.PresetQueue
 {
     partial class PresetPalettControl
     {
@@ -32,7 +32,7 @@
             this.labelPalett = new System.Windows.Forms.Label();
             this.labelPresets = new System.Windows.Forms.Label();
             this.presetQueue = new Angrand.GUI.PresetQueue.PresetQueue();
-            this.palettControl = new Angrand.GUI.PalettControl.PalettControl();
+            this.palettControl = new PalettControl();
             this.tableLayoutPanelPresetPalettControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +127,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPresetPalettControl;
         private System.Windows.Forms.Label labelPalett;
         private System.Windows.Forms.Label labelPresets;
-        private PresetQueue.PresetQueue presetQueue;
+        private GUI.PresetQueue.PresetQueue presetQueue;
         private PalettControl palettControl;
     }
 }
