@@ -1,4 +1,6 @@
-﻿namespace Angrand.GUI.PalettControl
+﻿using Angrand.GUI.CardCollection;
+
+namespace Angrand.GUI.PalettControl
 {
     partial class PresetMatrixControl
     {
@@ -28,51 +30,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanelMatricePalettControl = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonDone = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresetMatrixControl));
+            this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.colorPanelRight = new Angrand.GUI.ColorSpacePanel.ScrollableColorPanel();
             this.colorPanelLeft = new Angrand.GUI.ColorSpacePanel.ScrollableColorPanel();
-            this.matrixPanel = new Angrand.GUI.ColorSpacePanel.MatrixPanel();
-            this.tableLayoutPanelMatricePalettControl.SuspendLayout();
+            this.scrollablePixelMatrix = new Angrand.GUI.CardCollection.ScrollablePixelMatrix(  );
+            this.buttonDone = new System.Windows.Forms.Button();
+            this.tableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanelMatricePalettControl
+            // tableLayout
             // 
-            this.tableLayoutPanelMatricePalettControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tableLayoutPanelMatricePalettControl.ColumnCount = 2;
-            this.tableLayoutPanelMatricePalettControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMatricePalettControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMatricePalettControl.Controls.Add(this.colorPanelRight, 1, 0);
-            this.tableLayoutPanelMatricePalettControl.Controls.Add(this.buttonDone, 0, 2);
-            this.tableLayoutPanelMatricePalettControl.Controls.Add(this.colorPanelLeft, 0, 0);
-            this.tableLayoutPanelMatricePalettControl.Controls.Add(this.matrixPanel, 0, 1);
-            this.tableLayoutPanelMatricePalettControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMatricePalettControl.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelMatricePalettControl.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelMatricePalettControl.Name = "tableLayoutPanelMatricePalettControl";
-            this.tableLayoutPanelMatricePalettControl.RowCount = 4;
-            this.tableLayoutPanelMatricePalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMatricePalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMatricePalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMatricePalettControl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMatricePalettControl.Size = new System.Drawing.Size(450, 600);
-            this.tableLayoutPanelMatricePalettControl.TabIndex = 0;
-            // 
-            // buttonDone
-            // 
-            this.buttonDone.AllowDrop = true;
-            this.tableLayoutPanelMatricePalettControl.SetColumnSpan(this.buttonDone, 3);
-            this.buttonDone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDone.ForeColor = System.Drawing.Color.Gray;
-            this.buttonDone.Location = new System.Drawing.Point(0, 565);
-            this.buttonDone.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonDone.Name = "buttonDone";
-            this.buttonDone.Size = new System.Drawing.Size(450, 35);
-            this.buttonDone.TabIndex = 0;
-            this.buttonDone.Text = "Done";
-            this.buttonDone.UseVisualStyleBackColor = true;
+            this.tableLayout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tableLayout.ColumnCount = 2;
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayout.Controls.Add(this.colorPanelRight, 1, 0);
+            this.tableLayout.Controls.Add(this.buttonDone, 0, 2);
+            this.tableLayout.Controls.Add(this.colorPanelLeft, 0, 0);
+            this.tableLayout.Controls.Add(this.scrollablePixelMatrix, 0, 1);
+            this.tableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayout.Location = new System.Drawing.Point(0, 0);
+            this.tableLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayout.Name = "tableLayout";
+            this.tableLayout.RowCount = 4;
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayout.Size = new System.Drawing.Size(450, 600);
+            this.tableLayout.TabIndex = 0;
             // 
             // colorPanelRight
             // 
@@ -88,6 +75,22 @@
             this.colorPanelRight.Size = new System.Drawing.Size(225, 175);
             this.colorPanelRight.TabIndex = 11;
             // 
+            // buttonDone
+            // 
+            this.buttonDone.AllowDrop = true;
+            this.tableLayout.SetColumnSpan(this.buttonDone, 3);
+            this.buttonDone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDone.ForeColor = System.Drawing.Color.Gray;
+            this.buttonDone.Location = new System.Drawing.Point(0, 565);
+            this.buttonDone.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonDone.Name = "buttonDone";
+            this.buttonDone.Size = new System.Drawing.Size(450, 35);
+            this.buttonDone.TabIndex = 0;
+            this.buttonDone.Text = "Done";
+            this.buttonDone.UseVisualStyleBackColor = true;
+            // 
             // colorPanelLeft
             // 
             this.colorPanelLeft.AutoSize = true;
@@ -102,17 +105,17 @@
             this.colorPanelLeft.Size = new System.Drawing.Size(225, 175);
             this.colorPanelLeft.TabIndex = 10;
             // 
-            // matrixPanel
+            // scrollablePixelMatrix
             // 
-            this.matrixPanel.AutoSize = true;
-            this.tableLayoutPanelMatricePalettControl.SetColumnSpan(this.matrixPanel, 2);
-            this.matrixPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.matrixPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.matrixPanel.Location = new System.Drawing.Point(1, 178);
-            this.matrixPanel.Margin = new System.Windows.Forms.Padding(1);
-            this.matrixPanel.Name = "matrixPanel";
-            this.matrixPanel.Size = new System.Drawing.Size(448, 386);
-            this.matrixPanel.TabIndex = 14;
+            this.scrollablePixelMatrix.AutoSize = true;
+            this.tableLayout.SetColumnSpan(this.scrollablePixelMatrix, 2);
+            this.scrollablePixelMatrix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scrollablePixelMatrix.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.scrollablePixelMatrix.Location = new System.Drawing.Point(1, 178);
+            this.scrollablePixelMatrix.Margin = new System.Windows.Forms.Padding(1);
+            this.scrollablePixelMatrix.Name = "scrollablePixelMatrix";
+            this.scrollablePixelMatrix.Size = new System.Drawing.Size(448, 386);
+            this.scrollablePixelMatrix.TabIndex = 14;
             // 
             // PresetMatrixControl
             // 
@@ -120,24 +123,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.tableLayoutPanelMatricePalettControl);
+            this.Controls.Add(this.tableLayout);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkGray;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PresetMatrixControl";
             this.Size = new System.Drawing.Size(450, 600);
-            this.tableLayoutPanelMatricePalettControl.ResumeLayout(false);
-            this.tableLayoutPanelMatricePalettControl.PerformLayout();
+            this.tableLayout.ResumeLayout(false);
+            this.tableLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMatricePalettControl;
+        private System.Windows.Forms.TableLayoutPanel tableLayout;
         private System.Windows.Forms.Button buttonDone;
         private ColorSpacePanel.ScrollableColorPanel colorPanelRight;
         private ColorSpacePanel.ScrollableColorPanel colorPanelLeft;
-        private ColorSpacePanel.MatrixPanel matrixPanel;
+        private ScrollablePixelMatrix scrollablePixelMatrix;
     }
 }
