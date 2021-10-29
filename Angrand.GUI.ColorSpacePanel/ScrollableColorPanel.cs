@@ -9,8 +9,8 @@ namespace Angrand.GUI.ColorSpacePanel {
     private bool locked = false;
     public event Action<Color> OnColorChanged;
     public event MouseEventHandler OnTextBoxMouseDown {
-      add => this.textBox.MouseDown += value;
-      remove => this.textBox.MouseDown -= value;
+      add => textBox.MouseDown += value;
+      remove => textBox.MouseDown -= value;
     }
 
     public ScrollableColorPanel() {
@@ -27,36 +27,36 @@ namespace Angrand.GUI.ColorSpacePanel {
       scrollableH.Bound = (0, 360 + 9);
       scrollableS.Bound = (0, 100 + 9);
       scrollableL.Bound = (0, 100 + 9);
-      this.scrollableR.OnValueChanged += this.rgb_ValueChanged;
-      this.scrollableG.OnValueChanged += this.rgb_ValueChanged;
-      this.scrollableB.OnValueChanged += this.rgb_ValueChanged;
-      this.scrollableH.OnValueChanged += this.hsl_ValueChanged;
-      this.scrollableS.OnValueChanged += this.hsl_ValueChanged;
-      this.scrollableL.OnValueChanged += this.hsl_ValueChanged;
-      this.textBox.KeyDown += this.textBox_KeyPress;
-      this.textBox.Leave += this.hex_ValueChanged;
-      this.tableLayoutPanel.DragEnter += this.control_DragEnter;
-      this.tableLayoutPanel.DragDrop += this.control_DragDrop;
+      scrollableR.OnValueChanged += rgb_ValueChanged;
+      scrollableG.OnValueChanged += rgb_ValueChanged;
+      scrollableB.OnValueChanged += rgb_ValueChanged;
+      scrollableH.OnValueChanged += hsl_ValueChanged;
+      scrollableS.OnValueChanged += hsl_ValueChanged;
+      scrollableL.OnValueChanged += hsl_ValueChanged;
+      textBox.KeyDown += textBox_KeyPress;
+      textBox.Leave += hex_ValueChanged;
+      tableLayoutPanel.DragEnter += control_DragEnter;
+      tableLayoutPanel.DragDrop += control_DragDrop;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public string Hex {
-      get => this.Enabled ? this.textBox.Text : "#FFFFFF";
-      set => this.textBox.Text = value;
+      get => Enabled ? textBox.Text : "#FFFFFF";
+      set => textBox.Text = value;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public Color Rgb {
-      get => this.Enabled
+      get => Enabled
         ? Color.FromArgb(scrollableR.numericValue, scrollableG.numericValue, scrollableB.numericValue)
         : Color.Empty;
       set {
-        this.scrollableR.numericValue = value.R;
-        this.scrollableG.numericValue = value.G;
-        this.scrollableB.numericValue = value.B;
-        this.Enabled = !value.IsEmpty;
+        scrollableR.numericValue = value.R;
+        scrollableG.numericValue = value.G;
+        scrollableB.numericValue = value.B;
+        Enabled = !value.IsEmpty;
       }
     }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -64,58 +64,58 @@ namespace Angrand.GUI.ColorSpacePanel {
     public (float h, float s, float l) Hsl {
       get => (scrollableH.numericValue, scrollableS.numericValue, scrollableL.numericValue);
       set {
-        this.scrollableH.numericValue = (int)value.h;
-        this.scrollableS.numericValue = (int)value.s;
-        this.scrollableL.numericValue = (int)value.l;
+        scrollableH.numericValue = (int)value.h;
+        scrollableS.numericValue = (int)value.s;
+        scrollableL.numericValue = (int)value.l;
       }
     }
 
     private void PaintTextBox(Color color) {
-      this.textBox.BackColor = color;
-      this.textBox.ForeColor = color.Reverse();
-      this.OnColorChanged?.Invoke(this.Rgb);
+      textBox.BackColor = color;
+      textBox.ForeColor = color.Reverse();
+      OnColorChanged?.Invoke(Rgb);
     }
     private void rgb_ValueChanged(int value) {
-      if (this.locked) return;
-      this.locked = true;
-      var color = this.Rgb;
-      this.Hsl = color.ColorToHsl();
-      this.Hex = color.ColorToHex();
-      this.PaintTextBox(color);
-      this.locked = false;
+      if (locked) return;
+      locked = true;
+      var color = Rgb;
+      Hsl = color.ColorToHsl();
+      Hex = color.ColorToHex();
+      PaintTextBox(color);
+      locked = false;
     }
     private void hsl_ValueChanged(int value) {
-      if (this.locked) return;
-      this.locked = true;
-      var hsl = this.Hsl;
-      var color = this.Rgb = hsl.HslToColor();
-      this.Hex = color.ColorToHex();
-      this.PaintTextBox(color);
-      this.locked = false;
+      if (locked) return;
+      locked = true;
+      var hsl = Hsl;
+      var color = Rgb = hsl.HslToColor();
+      Hex = color.ColorToHex();
+      PaintTextBox(color);
+      locked = false;
     }
     private void hex_ValueChanged(object sender, EventArgs e) {
-      if (this.locked) return;
-      this.locked = true;
-      var hex = this.Hex;
-      var color = this.Rgb = Conv.HexToColor(hex);
-      this.Hsl = color.ColorToHsl();
-      this.PaintTextBox(color);
-      this.locked = false;
+      if (locked) return;
+      locked = true;
+      var hex = Hex;
+      var color = Rgb = Conv.HexToColor(hex);
+      Hsl = color.ColorToHsl();
+      PaintTextBox(color);
+      locked = false;
     }
 
     private void textBox_KeyPress(object sender, KeyEventArgs e) {
       if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return)) {
-        this.SelectNextControl((Control)sender, true, true, true, true);
+        SelectNextControl((Control)sender, true, true, true, true);
       }
     }
 
     private void control_DragEnter(object sender, DragEventArgs e) {
-      e.Effect = e.Data.GetDataPresent(typeof(System.Drawing.Color))
+      e.Effect = e.Data.GetDataPresent(typeof(Color))
         ? DragDropEffects.Copy
         : DragDropEffects.None;
     }
     private void control_DragDrop(object sender, DragEventArgs e) {
-      this.Rgb = (Color)e.Data.GetData(typeof(Color));
+      Rgb = (Color)e.Data.GetData(typeof(Color));
     }
   }
 }
