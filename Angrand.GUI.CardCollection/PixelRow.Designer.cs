@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
 namespace Angrand.GUI.CardCollection {
-  partial class CardPreset {
+  partial class PixelRow {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
@@ -46,7 +46,7 @@ namespace Angrand.GUI.CardCollection {
             this.tableLayoutPanel.Size = new System.Drawing.Size(160, 24);
             this.tableLayoutPanel.TabIndex = 0;
             // 
-            // CardPreset
+            // PixelRow
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -54,7 +54,7 @@ namespace Angrand.GUI.CardCollection {
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "CardPreset";
+            this.Name = "PixelRow";
             this.Size = new System.Drawing.Size(160, 24);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CardPreset_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CardPreset_DragEnter);

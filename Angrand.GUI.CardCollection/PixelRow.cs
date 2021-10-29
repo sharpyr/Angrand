@@ -10,17 +10,17 @@ using PalettPreset = Palett.Types.Preset;
 using ColorPair = System.ValueTuple<System.Drawing.Color, System.Drawing.Color>;
 
 namespace Angrand.GUI.CardCollection {
-  public partial class CardPreset : UserControl {
+  public partial class PixelRow : UserControl {
     public event EventHandler OnLabelDoubleClicked;
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public int Count { get; set; } = 5;
     private readonly Label[] labelCollection;
-    public CardPreset() {
+    public PixelRow() {
       InitializeComponent();
-      this.tableLayoutPanel.SuspendLayout();
-      this.SuspendLayout();
-      this.labelCollection = Vec.Init(Count, i => {
+      tableLayoutPanel.SuspendLayout();
+      SuspendLayout();
+      labelCollection = Vec.Init(Count, i => {
         var label = new Label {
                                 BackColor = Color.FromArgb(50 + i * 50, 50 + i * 50, 50 + i * 50),
                                 Dock = DockStyle.Fill,
@@ -33,39 +33,39 @@ namespace Angrand.GUI.CardCollection {
                                 Size = new Size(24, 24),
                                 TabIndex = i,
                               };
-        label.MouseDown += this.label_MouseDown;
-        label.DoubleClick += this.label_DoubleClicked;
-        this.tableLayoutPanel.Controls.Add(label, i, 0);
+        label.MouseDown += label_MouseDown;
+        label.DoubleClick += label_DoubleClicked;
+        tableLayoutPanel.Controls.Add(label, i, 0);
         return label;
       });
-      this.tableLayoutPanel.ResumeLayout(false);
-      this.ResumeLayout(false);
+      tableLayoutPanel.ResumeLayout(false);
+      ResumeLayout(false);
     }
 
-    public Label LabelLeft => this.labelCollection.First();
-    public Label LabelRight => this.labelCollection.Last();
+    public Label LabelLeft => labelCollection.First();
+    public Label LabelRight => labelCollection.Last();
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     [Browsable(false)]
     public ColorPair Preset {
-      get => (this.LabelLeft.BackColor, this.LabelRight.BackColor);
+      get => (LabelLeft.BackColor, LabelRight.BackColor);
       set {
         var (min, max) = value;
         var preset = PalettPreset.Build(min.ColorToHex(), max.ColorToHex());
-        var projector = ProjectorFactory.Build((0, this.Count - 1), preset);
-        var colorCollection = Vec.Init(this.Count, i => projector.Project(i).HslToColor());
+        var projector = ProjectorFactory.Build((0, Count - 1), preset);
+        var colorCollection = Vec.Init(Count, i => projector.Project(i).HslToColor());
         labelCollection.IterZip(colorCollection, (label, color) => label.BackColor = color);
       }
     }
 
     private void label_DoubleClicked(object sender, EventArgs e) {
-      this.OnLabelDoubleClicked?.Invoke(this, e);
+      OnLabelDoubleClicked?.Invoke(this, e);
     }
 
     private void label_MouseDown(object sender, MouseEventArgs e) {
       if (e.Button == MouseButtons.Left && e.Clicks == 1) {
-        var preset = (this.LabelLeft.BackColor, this.LabelRight.BackColor);
-        this.DoDragDrop(preset, DragDropEffects.Copy | DragDropEffects.Move);
+        var preset = (LabelLeft.BackColor, LabelRight.BackColor);
+        DoDragDrop(preset, DragDropEffects.Copy | DragDropEffects.Move);
       }
     }
 
@@ -74,7 +74,7 @@ namespace Angrand.GUI.CardCollection {
     }
 
     private void CardPreset_DragDrop(object sender, DragEventArgs e) {
-      var control = (CardPreset)sender;
+      var control = (PixelRow)sender;
       var (min, max) = (ColorPair)e.Data.GetData(typeof(ColorPair));
       control.Preset = (min, max);
     }
