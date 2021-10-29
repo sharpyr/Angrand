@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
-namespace Angrand.GUI.ColorSpacePanel {
-  partial class MatrixPanel {
+namespace Angrand.GUI.CardCollection {
+  partial class ScrollablePixelMatrix {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
@@ -30,7 +30,7 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.vScrollBarLightness = new System.Windows.Forms.VScrollBar();
             this.vScrollBarSaturation = new System.Windows.Forms.VScrollBar();
             this.hScrollBarHue = new System.Windows.Forms.HScrollBar();
-            this.cardMatrice = new Angrand.GUI.CardCollection.CardMatrice();
+            this.pixelMatrix = new Angrand.GUI.CardCollection.PixelMatrix();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel.Controls.Add(this.hScrollBarHueRange, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.cardMatrice, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.pixelMatrix, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.vScrollBarLightness, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.vScrollBarSaturation, 2, 0);
             this.tableLayoutPanel.Controls.Add(this.hScrollBarHue, 1, 1);
@@ -98,23 +98,23 @@ namespace Angrand.GUI.ColorSpacePanel {
             this.hScrollBarHue.Size = new System.Drawing.Size(180, 22);
             this.hScrollBarHue.TabIndex = 3;
             // 
-            // cardMatrice
+            // pixelMatrix
             // 
-            this.cardMatrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardMatrice.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.cardMatrice.Location = new System.Drawing.Point(25, 1);
-            this.cardMatrice.Margin = new System.Windows.Forms.Padding(1);
-            this.cardMatrice.Name = "cardMatrice";
-            this.cardMatrice.Size = new System.Drawing.Size(180, 170);
-            this.cardMatrice.TabIndex = 0;
+            this.pixelMatrix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pixelMatrix.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.pixelMatrix.Location = new System.Drawing.Point(25, 1);
+            this.pixelMatrix.Margin = new System.Windows.Forms.Padding(1);
+            this.pixelMatrix.Name = "pixelMatrix";
+            this.pixelMatrix.Size = new System.Drawing.Size(180, 170);
+            this.pixelMatrix.TabIndex = 0;
             // 
-            // MatrixPanel
+            // ScrollablePixelMatrix
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(1);
-            this.Name = "MatrixPanel";
+            this.Name = "ScrollablePixelMatrix";
             this.Size = new System.Drawing.Size(230, 220);
             this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -124,7 +124,7 @@ namespace Angrand.GUI.ColorSpacePanel {
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private CardCollection.CardMatrice cardMatrice;
+        private CardCollection.PixelMatrix pixelMatrix;
         private System.Windows.Forms.VScrollBar vScrollBarLightness;
         private System.Windows.Forms.VScrollBar vScrollBarSaturation;
         private System.Windows.Forms.HScrollBar hScrollBarHue;
