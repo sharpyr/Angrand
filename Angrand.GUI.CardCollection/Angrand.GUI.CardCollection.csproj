@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -14,26 +14,26 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms"/>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Aryth.Math">
-      <Version>0.2.21</Version>
+      <Version>0.2.23</Version>
     </PackageReference>
     <PackageReference Include="Palett.Convert">
-      <Version>0.4.8</Version>
+      <Version>0.4.13</Version>
     </PackageReference>
     <PackageReference Include="Palett.Munsell">
-      <Version>0.4.8</Version>
+      <Version>0.4.13</Version>
     </PackageReference>
     <PackageReference Include="Palett.Projector">
-      <Version>0.4.8</Version>
+      <Version>0.4.13</Version>
     </PackageReference>
     <PackageReference Include="Palett.Types">
-      <Version>0.4.8</Version>
+      <Version>0.4.13</Version>
     </PackageReference>
     <PackageReference Include="Veho.Matrix">
-      <Version>0.5.10</Version>
+      <Version>0.5.12</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
