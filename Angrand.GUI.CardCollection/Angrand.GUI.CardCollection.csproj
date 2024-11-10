@@ -14,37 +14,19 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Aryth.Math">
-      <Version>0.2.23</Version>
-    </PackageReference>
-    <PackageReference Include="Palett.Convert">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Palett.Munsell">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Palett.Projector">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Palett.Types">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Veho.Matrix">
-      <Version>0.5.12</Version>
-    </PackageReference>
+    <PackageReference Include="Aryth.Math" Version="0.2.24" />
+    <PackageReference Include="Palett.Convert" Version="0.4.13"/>
+    <PackageReference Include="Palett.Munsell" Version="0.4.13"/>
+    <PackageReference Include="Palett.Projector" Version="0.4.13"/>
+    <PackageReference Include="Palett.Types" Version="0.4.13"/>
+    <PackageReference Include="Veho.Matrix" Version="0.5.12"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="PixelMatrix.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="PixelRow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ScrollablePixelMatrix.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="PixelMatrix.cs" SubType="UserControl"/>
+    <Compile Update="PixelRow.cs" SubType="UserControl"/>
+    <Compile Update="ScrollablePixelMatrix.cs" SubType="UserControl"/>
   </ItemGroup>
 </Project>

@@ -14,37 +14,19 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Palett.Convert">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Veho.Vector">
-      <Version>0.5.12</Version>
-    </PackageReference>
+    <PackageReference Include="Palett.Convert" Version="0.4.13"/>
+    <PackageReference Include="Veho.Vector" Version="0.5.12"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="PresetQueue.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="CardCollection.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="CardMatrix.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ColorSpacePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="PresetPalettControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="MatrixPalettControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="PalettControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="PresetQueue.cs" SubType="UserControl"/>
+    <Compile Update="CardCollection.cs" SubType="UserControl"/>
+    <Compile Update="CardMatrix.cs" SubType="UserControl"/>
+    <Compile Update="ColorSpacePanel.cs" SubType="UserControl"/>
+    <Compile Update="PresetPalettControl.cs" SubType="UserControl"/>
+    <Compile Update="MatrixPalettControl.cs" SubType="UserControl"/>
+    <Compile Update="PalettControl.cs" SubType="UserControl"/>
   </ItemGroup>
 </Project>

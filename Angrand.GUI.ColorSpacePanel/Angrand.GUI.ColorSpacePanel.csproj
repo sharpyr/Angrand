@@ -14,31 +14,19 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="Veho.Matrix">
-      <HintPath>..\..\..\..\.nuget\packages\veho.matrix\0.5.10\lib\netstandard2.0\Veho.Matrix.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Forms"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Palett.Convert">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Palett.Munsell">
-      <Version>0.4.13</Version>
-    </PackageReference>
-    <PackageReference Include="Veho.Vector">
-      <Version>0.5.12</Version>
-    </PackageReference>
+    <PackageReference Include="Palett.Convert" Version="0.4.13"/>
+    <PackageReference Include="Palett.Munsell" Version="0.4.13"/>
+    <PackageReference Include="Veho.Matrix" Version="0.5.12"/>
+    <PackageReference Include="Veho.Vector" Version="0.5.12"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj" />
+    <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ScrollableNumber.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ScrollableColorPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="ScrollableNumber.cs" SubType="UserControl"/>
+    <Compile Update="ScrollableColorPanel.cs" SubType="UserControl"/>
   </ItemGroup>
 </Project>
