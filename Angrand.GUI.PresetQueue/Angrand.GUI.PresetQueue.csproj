@@ -1,32 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <PackageVersion>0.1.20</PackageVersion>
+    <PackageVersion>0.1.21</PackageVersion>
     <Title>Angrand.GUI.PresetQueue</Title>
     <Description>User control PresetQueue</Description>
     <Authors>Hoyeung Wong</Authors>
     <Company>Hoyeung Wong</Company>
     <Copyright>Hoyeung Wong (c) 2020-present</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>0.1.20</AssemblyVersion>
-    <FileVersion>0.1.20</FileVersion>
+    <AssemblyVersion>0.1.21</AssemblyVersion>
+    <FileVersion>0.1.21</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>angrand-avatar.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms"/>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Palett.Convert" Version="0.4.13"/>
-    <PackageReference Include="Veho.Vector" Version="0.5.12"/>
+    <PackageReference Include="Palett.Convert" Version="0.4.13" />
+    <PackageReference Include="Veho.Vector" Version="0.5.12" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="PresetQueue.cs" SubType="UserControl"/>
-    <Compile Update="CardCollection.cs" SubType="UserControl"/>
-    <Compile Update="CardMatrix.cs" SubType="UserControl"/>
-    <Compile Update="ColorSpacePanel.cs" SubType="UserControl"/>
-    <Compile Update="PresetPalettControl.cs" SubType="UserControl"/>
-    <Compile Update="MatrixPalettControl.cs" SubType="UserControl"/>
-    <Compile Update="PalettControl.cs" SubType="UserControl"/>
+    <Compile Update="PresetQueue.cs" SubType="UserControl" />
+    <Compile Update="CardCollection.cs" SubType="UserControl" />
+    <Compile Update="CardMatrix.cs" SubType="UserControl" />
+    <Compile Update="ColorSpacePanel.cs" SubType="UserControl" />
+    <Compile Update="PresetPalettControl.cs" SubType="UserControl" />
+    <Compile Update="MatrixPalettControl.cs" SubType="UserControl" />
+    <Compile Update="PalettControl.cs" SubType="UserControl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\media\angrand-avatar.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
