@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net480</TargetFramework>
     <PackageVersion>0.1.21</PackageVersion>
     <Title>Angrand.GUI.PresetQueue</Title>
     <Description>User control PresetQueue</Description>
@@ -19,8 +19,8 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Palett.Convert" Version="0.4.13" />
-    <PackageReference Include="Veho.Vector" Version="0.5.12" />
+    <PackageReference Include="Palett.Convert" Version="0.4.14" />
+    <PackageReference Include="Veho.Vector" Version="0.5.13" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="PresetQueue.cs" SubType="UserControl" />

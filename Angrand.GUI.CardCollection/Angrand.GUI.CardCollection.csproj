@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net480</TargetFramework>
     <PackageVersion>0.1.21</PackageVersion>
     <Title>Angrand.GUI.CardCollection</Title>
     <Description>User control CardCollection</Description>
@@ -20,11 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Aryth.Math" Version="0.2.24" />
-    <PackageReference Include="Palett.Convert" Version="0.4.13" />
-    <PackageReference Include="Palett.Munsell" Version="0.4.13" />
-    <PackageReference Include="Palett.Projector" Version="0.4.13" />
-    <PackageReference Include="Palett.Types" Version="0.4.13" />
-    <PackageReference Include="Veho.Matrix" Version="0.5.12" />
+    <PackageReference Include="Palett.Convert" Version="0.4.14" />
+    <PackageReference Include="Palett.Munsell" Version="0.4.14" />
+    <PackageReference Include="Palett.Projector" Version="0.4.14" />
+    <PackageReference Include="Palett.Types" Version="0.4.14" />
+    <PackageReference Include="Veho.Matrix" Version="0.5.13" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="PixelMatrix.cs" SubType="UserControl" />

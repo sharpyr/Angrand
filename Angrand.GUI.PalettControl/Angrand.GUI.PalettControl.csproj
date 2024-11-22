@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net480</TargetFramework>
     <PackageVersion>0.1.21</PackageVersion>
     <Title>Angrand.GUI.PalettControl</Title>
     <Description>User control PalettControl</Description>
@@ -19,7 +19,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Palett.Convert" Version="0.4.13" />
+    <PackageReference Include="Palett.Convert" Version="0.4.14" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Angrand.GUI.CardCollection\Angrand.GUI.CardCollection.csproj" />

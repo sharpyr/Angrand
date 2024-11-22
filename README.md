@@ -6,12 +6,12 @@ Cross-table analytics
 [![Downloads](https://img.shields.io/nuget/dt/Angrand.GUI.PalettControl.svg)](https://www.nuget.org/packages/Angrand)
 [![Dependent Libraries](https://img.shields.io/librariesio/dependents/nuget/Angrand.GUI.PalettControl.svg?label=dependent%20libraries)](https://libraries.io/nuget/Angrand)
 [![Language](https://img.shields.io/badge/language-C%23-blueviolet.svg)](https://dotnet.microsoft.com/learn/csharp)
-[![Compatibility](https://img.shields.io/badge/compatibility-.NET%20Standard%202.0-blue.svg)]()
+[![Compatibility](https://img.shields.io/badge/compatibility-.NET%20Framework%204.8.0-indigo.svg)]()
 [![License](https://img.shields.io/github/license/sharpyr/Angrand.GUI.PalettControl.svg)](https://github.com/sharpyr/Angrand/LICENSE)
 
 ## Install
 
-Angrand targets .NET Framework 4.7.2.
+Angrand targets .NET Framework 4.8.0
 
 Install [Angrand package](https://www.nuget.org/packages/Angrand) and sub packages.
 
