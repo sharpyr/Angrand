@@ -14,8 +14,6 @@
     <GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
     <GenerateResourceMSBuildRuntime>CurrentRuntime</GenerateResourceMSBuildRuntime>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile/>
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,4 +68,7 @@
     <ProjectReference Name="Angrand.GUI.PresetQueue" Include="..\Angrand.GUI.PresetQueue\Angrand.GUI.PresetQueue.csproj" Project="{278321C2-B369-490F-8187-1A39CD81F439}"/>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
 </Project>
