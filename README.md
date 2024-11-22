@@ -1,6 +1,6 @@
 ![Banner](https://raw.githubusercontent.com/sharpyr/Angrand/refs/heads/master/media/angrand-banner.svg)
 
-Cross-table analytics
+Color selector
 
 [![Version](https://img.shields.io/nuget/vpre/Angrand.GUI.PalettControl.svg)](https://www.nuget.org/packages/Angrand)
 [![Downloads](https://img.shields.io/nuget/dt/Angrand.GUI.PalettControl.svg)](https://www.nuget.org/packages/Angrand)
